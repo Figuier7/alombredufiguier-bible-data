@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Figuier Interlinear Book",
+  "type": "object",
+  "required": [
+    "book",
+    "code",
+    "chapters"
+  ],
+  "properties": {
+    "book": {
+      "type": "string"
+    },
+    "code": {
+      "type": "string"
+    },
+    "name_fr": {
+      "type": "string"
+    },
+    "chapters": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": true
+}

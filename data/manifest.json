@@ -1,0 +1,806 @@
+{
+  "name": "alombredufiguier-bible-data",
+  "version": "2026.05.06",
+  "generated_at": "2026-05-06T15:17:13.229Z",
+  "source_root_hint": "dictionnaire-biblique-v2",
+  "license": "CC BY 4.0",
+  "attribution": "Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.",
+  "files": [
+    {
+      "path": "data/dictionaries/concepts.json",
+      "source": "uploads/dictionnaires/concepts.json",
+      "kind": "json",
+      "group": "dictionary-index",
+      "bytes": 6300677,
+      "sha256": "f8d4600de82eda33ed98adb69cf229f3705de21107ed6fd15a5901a245be9c8b",
+      "records": 9844
+    },
+    {
+      "path": "data/dictionaries/concept-entry-links.json",
+      "source": "uploads/dictionnaires/concept-entry-links.json",
+      "kind": "json",
+      "group": "dictionary-index",
+      "bytes": 2500341,
+      "sha256": "6521ac59b797ac58cc7cab34d63c16d43c11f0e44e0e164f0e00d0caacb63517",
+      "records": 18072
+    },
+    {
+      "path": "data/dictionaries/concept-labels.json",
+      "source": "uploads/dictionnaires/concept-labels.json",
+      "kind": "json",
+      "group": "dictionary-index",
+      "bytes": 135100,
+      "sha256": "fcef12090942123e84b87619282746e57af1f1411a0d8c2cd73023d5e9f205f2",
+      "records": 2488
+    },
+    {
+      "path": "data/dictionaries/concept-meta.json",
+      "source": "uploads/dictionnaires/concept-meta.json",
+      "kind": "json",
+      "group": "dictionary-index",
+      "bytes": 3212964,
+      "sha256": "b14059af3ae0734d5215f303fb143b170f52715b16445de51aa35b938a16cd5b",
+      "records": 9844
+    },
+    {
+      "path": "data/dictionaries/concept-url-slugs.json",
+      "source": "uploads/dictionnaires/concept-url-slugs.json",
+      "kind": "json",
+      "group": "dictionary-index",
+      "bytes": 233528,
+      "sha256": "14a7b70b705f2aaee3991ef2689683f3bdc0e4edac5e482944c7ad657404d68d",
+      "records": 9844
+    },
+    {
+      "path": "data/dictionaries/slug-map.json",
+      "source": "uploads/dictionnaires/slug-map.json",
+      "kind": "json",
+      "group": "dictionary-index",
+      "bytes": 234886,
+      "sha256": "78a5d8259bf44d43849d3ac5a665026c425f0266b8a10c4e5bbf28b815773029",
+      "records": 9901
+    },
+    {
+      "path": "data/dictionaries/browse-index.json",
+      "source": "uploads/dictionnaires/browse-index.json",
+      "kind": "json",
+      "group": "dictionary-index",
+      "bytes": 3788629,
+      "sha256": "245da500cc30f00352a45b0f90010c3b26a2cd58ed4622277b92b31ff0b4bd10",
+      "records": 4
+    },
+    {
+      "path": "data/indexes/search-index.json",
+      "source": "uploads/dictionnaires/search-index.json",
+      "kind": "json",
+      "group": "search",
+      "bytes": 15009764,
+      "sha256": "17099266800a9646f1fb4a49bdf99b8139faab22a8657c9a1fed28350ba9d67e",
+      "records": 9842
+    },
+    {
+      "path": "data/indexes/search-docs.jsonl",
+      "source": "uploads/dictionnaires/search-docs.jsonl",
+      "kind": "jsonl",
+      "group": "search",
+      "bytes": 12112104,
+      "sha256": "7ee09401992ee391f4f868d13ac8d55add5c7004cf461149425599ef9ee0ae30",
+      "records": 9842
+    },
+    {
+      "path": "data/dictionaries/bym/bym-lexicon.entries.json",
+      "source": "uploads/dictionnaires/bym/bym-lexicon.entries.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 481483,
+      "sha256": "7fd8731d7452730e0aa1a3ac28d8abde176141d3c7964ce20a16ab3ce8b078b7",
+      "records": 515
+    },
+    {
+      "path": "data/dictionaries/easton/easton.entries.json",
+      "source": "uploads/dictionnaires/easton/easton.entries.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 4587824,
+      "sha256": "792bf76ae867e5b4d4ccf2a0ed76817540fd60e8fdbb983e61f67abd0cbb2a9d",
+      "records": 3963
+    },
+    {
+      "path": "data/dictionaries/smith/smith.entries.json",
+      "source": "uploads/dictionnaires/smith/smith.entries.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 4798028,
+      "sha256": "5ef68903aaab6101ec84de3efc0282e814d0b14e806b6f555bf31165a708420f",
+      "records": 4560
+    },
+    {
+      "path": "data/hebrew/hebrew-lexicon-fr-compact.json",
+      "source": "uploads/dictionnaires/hebrew/hebrew-lexicon-fr-compact.json",
+      "kind": "json",
+      "group": "hebrew",
+      "bytes": 3715908,
+      "sha256": "d71835b685003e3e66a4a71c50e9228135fbe18fc0b17d90db91aff668b7f3ed",
+      "records": 9831
+    },
+    {
+      "path": "data/hebrew/strong-to-concepts-index.json",
+      "source": "uploads/dictionnaires/strong-to-concepts-index.json",
+      "kind": "json",
+      "group": "hebrew",
+      "bytes": 361828,
+      "sha256": "16f203d38a74c185828ae74a0a4bc4084d9b8f3de21c17c19a2d0e1d6192652f",
+      "records": 4280
+    },
+    {
+      "path": "data/hebrew/strong-concordance-oshb.json",
+      "source": "uploads/dictionnaires/strong-concordance-oshb.json",
+      "kind": "json",
+      "group": "hebrew",
+      "bytes": 3211212,
+      "sha256": "a32aa21bdc2a4e29558be683af10a260c96950cd22e3add6e879f6254e1e791d",
+      "records": 8896
+    },
+    {
+      "path": "data/hebrew/strong-root-families.json",
+      "source": "uploads/dictionnaires/strong-root-families.json",
+      "kind": "json",
+      "group": "hebrew",
+      "bytes": 3366835,
+      "sha256": "da75093dacc19efaa7978d89f451ab7545d49ccb0a1b8d1df8eda0d16dadf7a4",
+      "records": 8185
+    },
+    {
+      "path": "data/hebrew/strong-root-families-enriched.json",
+      "source": "uploads/dictionnaires/strong-root-families-enriched.json",
+      "kind": "json",
+      "group": "hebrew",
+      "bytes": 2687037,
+      "sha256": "1ca4af9785aa267d38aec3f0934bac571c30e743758bc221d8c185557e4567ab",
+      "records": 8185
+    },
+    {
+      "path": "data/hebrew/concept-strong-map.json",
+      "source": "uploads/dictionnaires/concept-strong-map.json",
+      "kind": "json",
+      "group": "hebrew",
+      "bytes": 51945,
+      "sha256": "b06d373f3c57993d77d0417ddcb95cb45403bfd3ee70725a236bc425716f2f8f",
+      "records": 2493
+    },
+    {
+      "path": "data/hebrew/concept-french-strong-map.json",
+      "source": "uploads/dictionnaires/concept-french-strong-map.json",
+      "kind": "json",
+      "group": "hebrew",
+      "bytes": 296095,
+      "sha256": "76066ad9d188dd62ba4584d75f2a9f814319f213c23e42ec44f8ccbb7616aee6",
+      "records": 2279
+    },
+    {
+      "path": "data/interlinear/at-search-index.json",
+      "source": "uploads/dictionnaires/interlinear/at-search-index.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 33468018,
+      "sha256": "2da7161c54eb1724f82e54ecf52eea054e53368289c89f4febe32d5b7184e0dd",
+      "records": 306785
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-A.json",
+      "source": "uploads/dictionnaires/isbe/isbe-A.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 2201851,
+      "sha256": "a97c18e5962b2655ff9c209f2229a8450e81dd8f2d1ec6ff0b24ca5b6d35012a",
+      "records": 979
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-B.json",
+      "source": "uploads/dictionnaires/isbe/isbe-B.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1405811,
+      "sha256": "30b90500a1884111181ed74164a42b2de5d3f98ad4bfdd040d0c6c111f4658c8",
+      "records": 729
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-C.json",
+      "source": "uploads/dictionnaires/isbe/isbe-C.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1542271,
+      "sha256": "54871242c0d84bc87bd6fecaaa7b375d31506087934790fd23d4f0c5bd3a8165",
+      "records": 673
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-D.json",
+      "source": "uploads/dictionnaires/isbe/isbe-D.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 969383,
+      "sha256": "2da4c9c9959d4c9aec6389499a115d772d7e3003cfaae11b06fb011010b4e2bc",
+      "records": 329
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-E.json",
+      "source": "uploads/dictionnaires/isbe/isbe-E.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1075378,
+      "sha256": "4d324360842a8e75f3abe85d8e803761b242c1e629f339ba143e4bcf75d7ccf7",
+      "records": 462
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-F.json",
+      "source": "uploads/dictionnaires/isbe/isbe-F.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 631110,
+      "sha256": "a7825beb38dc3a7b749d46b79b1787ae12c83648db7b9eb279e310eabd69fdad",
+      "records": 255
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-G.json",
+      "source": "uploads/dictionnaires/isbe/isbe-G.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1007799,
+      "sha256": "66718156976630f74baa391da1171be3b3a62b332b72a71f6ecc8cca6fff0e2f",
+      "records": 352
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-H.json",
+      "source": "uploads/dictionnaires/isbe/isbe-H.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1141851,
+      "sha256": "d18b7fc557613c4e0ad58d985e5c77b9107219a6fb11c22d0d008722aec362f6",
+      "records": 540
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-I.json",
+      "source": "uploads/dictionnaires/isbe/isbe-I.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 515717,
+      "sha256": "31e01105e4bdc886acdbd02db6398ceae8f7bccb57b8ae9bd495c143284ea260",
+      "records": 224
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-J.json",
+      "source": "uploads/dictionnaires/isbe/isbe-J.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1320136,
+      "sha256": "0cdeaa2269fdd5e0202fd23996c7958b5ebcc884e76a67f273e9d0b97bf2d0e6",
+      "records": 462
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-K.json",
+      "source": "uploads/dictionnaires/isbe/isbe-K.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 245562,
+      "sha256": "f51177547ba58f8cb66b6cb6510c4e8a9002553bc912c4be90636390322778d5",
+      "records": 127
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-L.json",
+      "source": "uploads/dictionnaires/isbe/isbe-L.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 779635,
+      "sha256": "1764359874c617ee08c0cf3579717e2852a6a599752deee91386b1d708b3279f",
+      "records": 245
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-M.json",
+      "source": "uploads/dictionnaires/isbe/isbe-M.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1223544,
+      "sha256": "77305e2e41873a2ae03ce36145e2ec366d766b550c52dfedfc9cdc88629f253a",
+      "records": 582
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-N.json",
+      "source": "uploads/dictionnaires/isbe/isbe-N.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 459029,
+      "sha256": "6f572d287a77297f53647e3ac9c28e9992c40e064a3b4086f8b7359289923822",
+      "records": 238
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-O.json",
+      "source": "uploads/dictionnaires/isbe/isbe-O.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 351283,
+      "sha256": "f7273c526f35aa38bcec8f9929650675dc22db5e32c113106a21665317a6e90c",
+      "records": 176
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-P.json",
+      "source": "uploads/dictionnaires/isbe/isbe-P.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1626960,
+      "sha256": "d30dbaf3d157cc7c2eb729c4418a6c99ecebc99c44d4a93db4eea1136efedb35",
+      "records": 472
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-Q.json",
+      "source": "uploads/dictionnaires/isbe/isbe-Q.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 75597,
+      "sha256": "32b22061fbe66caa640d6a52df91703a29746f555282d62618bf65a423101e62",
+      "records": 22
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-R.json",
+      "source": "uploads/dictionnaires/isbe/isbe-R.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 696806,
+      "sha256": "488fd96f70e25f3192773a383df7e35f4f3e56ef8f432214fba003badb3f3c7d",
+      "records": 290
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-S.json",
+      "source": "uploads/dictionnaires/isbe/isbe-S.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 2060080,
+      "sha256": "9da40f8863f4d0f3ef46144573e8524c08ac7e91cd6e0051fbfa86ed2c231c97",
+      "records": 1017
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-T.json",
+      "source": "uploads/dictionnaires/isbe/isbe-T.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 966376,
+      "sha256": "87bf7f3e74330757579be704ad7ea1fe6ab8c634662784112fe08230527b60d5",
+      "records": 395
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-U.json",
+      "source": "uploads/dictionnaires/isbe/isbe-U.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 127353,
+      "sha256": "71b2dc86e962a0a507ae90031629ca6924d01db39f2d1eb885720016021eb3ef",
+      "records": 74
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-V.json",
+      "source": "uploads/dictionnaires/isbe/isbe-V.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 121368,
+      "sha256": "5382ae3b2734ec530c6feb64be493f553a4988b30f7ff20bed4ba94d0fc04345",
+      "records": 59
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-W.json",
+      "source": "uploads/dictionnaires/isbe/isbe-W.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 499656,
+      "sha256": "01749b5851aa8541b6815a1998cdfc9cecb9be04a118d638bf9a7173cd871a52",
+      "records": 139
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-X.json",
+      "source": "uploads/dictionnaires/isbe/isbe-X.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 1998,
+      "sha256": "6287c24d5f8dddb2ee999037e5dad47adf3123b0e4cde4339c6060ef9f8a0d61",
+      "records": 2
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-Y.json",
+      "source": "uploads/dictionnaires/isbe/isbe-Y.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 12563,
+      "sha256": "d7355ddae47fc2cf96bb4eb22a42b54473968a2393598b8a7b094b3a29cb8b01",
+      "records": 9
+    },
+    {
+      "path": "data/dictionaries/isbe/isbe-Z.json",
+      "source": "uploads/dictionnaires/isbe/isbe-Z.json",
+      "kind": "json",
+      "group": "dictionary-corpus",
+      "bytes": 300896,
+      "sha256": "fb6a35695b296c2b3281cff347ce365baa40339076d77419413f4d89ecfb6149",
+      "records": 182
+    },
+    {
+      "path": "data/interlinear/at/01-Gen.json",
+      "source": "uploads/dictionnaires/interlinear/at/01-Gen.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1599357,
+      "sha256": "abeba73ba05ad2987e576f83645899108ccb52eb59264e7cf036bba1cd687ad2",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/02-Exod.json",
+      "source": "uploads/dictionnaires/interlinear/at/02-Exod.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1304821,
+      "sha256": "886d7914b5ae697f52555629a9cd36f2b46924f69f1cec36e8644b6377b47575",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/03-Lev.json",
+      "source": "uploads/dictionnaires/interlinear/at/03-Lev.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 929140,
+      "sha256": "a5589172e69a387c1911cb988e574170b391d5090880a6009c153583bf7f1f2c",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/04-Num.json",
+      "source": "uploads/dictionnaires/interlinear/at/04-Num.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1288458,
+      "sha256": "e5c4e207de954a41e595fe837a2ada469497a323b9f0ed9569b8608581f0c3a0",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/05-Deut.json",
+      "source": "uploads/dictionnaires/interlinear/at/05-Deut.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1114980,
+      "sha256": "c3167bc94733e6a6c7f7db9f2bf57829eb2fa8b8ec14c71d57cdf18b5395d7f1",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/06-Josh.json",
+      "source": "uploads/dictionnaires/interlinear/at/06-Josh.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 792317,
+      "sha256": "fa0ee5855eb5cb0ff367e2846c44097872a2d60c007333846d3c792b73cc069c",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/07-Judg.json",
+      "source": "uploads/dictionnaires/interlinear/at/07-Judg.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 773588,
+      "sha256": "016100c97474ae41f65e4dbc655cc9a00d474bfae33149a5468b4e3d7b03b3dc",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/08-Ruth.json",
+      "source": "uploads/dictionnaires/interlinear/at/08-Ruth.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 100835,
+      "sha256": "1bd6eae52aaca270e8d343752f2648be1b1a594fb41e26756564593e577cf92b",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/09-1Sam.json",
+      "source": "uploads/dictionnaires/interlinear/at/09-1Sam.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1038378,
+      "sha256": "2eb6e8337b6a5b39c3e0a25159b76fb226542d3ef136d6490f6a99126b3ff0a0",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/10-2Sam.json",
+      "source": "uploads/dictionnaires/interlinear/at/10-2Sam.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 864067,
+      "sha256": "aa32e78af57f0256217d4b13c546f5b88e219ae6417c036ebb272a75a3b0032b",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/11-1Kgs.json",
+      "source": "uploads/dictionnaires/interlinear/at/11-1Kgs.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1029873,
+      "sha256": "1eb9efe1bbf5c7402e6a34f1999524c5d59ed1c774a4ac262e2a64bcfcd46438",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/12-2Kgs.json",
+      "source": "uploads/dictionnaires/interlinear/at/12-2Kgs.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 966108,
+      "sha256": "64d8e2a2fc17e11c238032b1e357082bd4c9404f529532ffb7c1005f3b8e09f4",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/13-1Chr.json",
+      "source": "uploads/dictionnaires/interlinear/at/13-1Chr.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 860473,
+      "sha256": "9b18cf9491b18637c8fb6ff70d4a9a5889d722b843de2824b687887038f0a167",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/14-2Chr.json",
+      "source": "uploads/dictionnaires/interlinear/at/14-2Chr.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1063260,
+      "sha256": "18f35b66b3d6fc64a5fe09edc5429be14024073230a2d09c71414ce1ad328326",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/15-Ezra.json",
+      "source": "uploads/dictionnaires/interlinear/at/15-Ezra.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 304588,
+      "sha256": "92699c0e83f56f8181bb2961645311d1b21d78f748e50bb4ecf58596b10a3908",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/16-Neh.json",
+      "source": "uploads/dictionnaires/interlinear/at/16-Neh.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 428779,
+      "sha256": "879cb8e2f73d04a48b6bc54fe86eb51a59c67e73dd60f4ceb11af74cad65e338",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/17-Esth.json",
+      "source": "uploads/dictionnaires/interlinear/at/17-Esth.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 240551,
+      "sha256": "988084d73ba4e66a4432b493bbcafda246adb99ccd61d85f8e5e198ba8183098",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/18-Job.json",
+      "source": "uploads/dictionnaires/interlinear/at/18-Job.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 659905,
+      "sha256": "6b50d0909c38823de2d8c463b1fb1ff54a183e47d1f24bc58c037e53a84d44a1",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/19-Ps.json",
+      "source": "uploads/dictionnaires/interlinear/at/19-Ps.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1579016,
+      "sha256": "6595b04a522fdbe807759f0b74c75cafa2ea7d4b2b0e6168ee6a077f74ee75b5",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/20-Prov.json",
+      "source": "uploads/dictionnaires/interlinear/at/20-Prov.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 553029,
+      "sha256": "98b73588c0895fd18943a80f9a3d5ba7a5f181b30406802031e680e73c3ee20c",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/21-Eccl.json",
+      "source": "uploads/dictionnaires/interlinear/at/21-Eccl.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 230233,
+      "sha256": "2d4caabb4fb7688d2f4b524585ce49feec23639237f41661d599941b83db6c24",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/22-Song.json",
+      "source": "uploads/dictionnaires/interlinear/at/22-Song.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 100497,
+      "sha256": "03d4e5b261b429eb3b0ca85cefb9c0bd87edaf886a6dd6b2c9c604fe98973617",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/23-Isa.json",
+      "source": "uploads/dictionnaires/interlinear/at/23-Isa.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1340997,
+      "sha256": "45ca6a003c2d034183a253c1ff688842a6c4e88b51c12f9b74c3c725dba9596b",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/24-Jer.json",
+      "source": "uploads/dictionnaires/interlinear/at/24-Jer.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1709026,
+      "sha256": "a05403dfd4cd36bc3c46f2febb758a6bb23a959274ab3173bb378e7f9db39c3e",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/25-Lam.json",
+      "source": "uploads/dictionnaires/interlinear/at/25-Lam.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 123531,
+      "sha256": "6a825b5742db078a23a44cfd6eb1f67f8d86d677063eb9dbf846a6b71ffb8505",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/26-Ezek.json",
+      "source": "uploads/dictionnaires/interlinear/at/26-Ezek.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 1488425,
+      "sha256": "e8942d6aa4ca5b62962ad64b0515de2001573aa156ce0018e4f0ee8c576dabeb",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/27-Dan.json",
+      "source": "uploads/dictionnaires/interlinear/at/27-Dan.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 480153,
+      "sha256": "8cf4afa6e10f4837e22d1f47658c300714f41c1477e9d69fb165048a7060d0e1",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/28-Hos.json",
+      "source": "uploads/dictionnaires/interlinear/at/28-Hos.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 187105,
+      "sha256": "11e115226626a144123fdc92f4ad099f88531b7a6b9e41494f9c20ecd2f3b276",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/29-Joel.json",
+      "source": "uploads/dictionnaires/interlinear/at/29-Joel.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 76114,
+      "sha256": "2eab1b8c1d075e5e30ff6946077717ac3bd22f3ac63a3a1aa3cb0be259849895",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/30-Amos.json",
+      "source": "uploads/dictionnaires/interlinear/at/30-Amos.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 160412,
+      "sha256": "caf6cc1938c1126b30354cc16445768553d761375fe7949a8f34fdcc1e0a78aa",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/31-Obad.json",
+      "source": "uploads/dictionnaires/interlinear/at/31-Obad.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 22763,
+      "sha256": "eb2bf807241439606c0315b4b965f5d9c0809dab7c6e70d2d611f5853ceb3a53",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/32-Jonah.json",
+      "source": "uploads/dictionnaires/interlinear/at/32-Jonah.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 53642,
+      "sha256": "767722ce83bc2cf81e0a91d6b452da5de62b53de6669a67a891cff33e04c4186",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/33-Mic.json",
+      "source": "uploads/dictionnaires/interlinear/at/33-Mic.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 110899,
+      "sha256": "532da65f6c170d792bf1ff4d31dcd863b8944429507ef9fff453fdae05974454",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/34-Nah.json",
+      "source": "uploads/dictionnaires/interlinear/at/34-Nah.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 45113,
+      "sha256": "7700d861843c0e0a91b2a9b56bb74f161e8a3e98db6b7e8fa2181c494221db72",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/35-Hab.json",
+      "source": "uploads/dictionnaires/interlinear/at/35-Hab.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 52869,
+      "sha256": "3708d010acdd4a6a82f019b68baa091c69b38af210cbaa17be178f134e60e582",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/36-Zeph.json",
+      "source": "uploads/dictionnaires/interlinear/at/36-Zeph.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 60635,
+      "sha256": "2a620ec3282a718d54dd1db2ba10300f6f992313e53a50c61bfbf60e115f4da1",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/37-Hag.json",
+      "source": "uploads/dictionnaires/interlinear/at/37-Hag.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 46897,
+      "sha256": "7ecff1100fa2f80eb5659d16ec49a51cf5e0b725e30e427594b0f21fd20261ae",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/38-Zech.json",
+      "source": "uploads/dictionnaires/interlinear/at/38-Zech.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 246183,
+      "sha256": "eb080d98843577a8ce14f65bffd92dd90f7b9cb26c948b459507660f02ae7db7",
+      "records": 4
+    },
+    {
+      "path": "data/interlinear/at/39-Mal.json",
+      "source": "uploads/dictionnaires/interlinear/at/39-Mal.json",
+      "kind": "json",
+      "group": "interlinear",
+      "bytes": 68387,
+      "sha256": "2bd96e7b927ccbd0c782447f54a667321a25b3ba283284af622477ba33f00acf",
+      "records": 4
+    }
+  ],
+  "stats": {
+    "files": 85,
+    "bytes": 146009623,
+    "by_group": {
+      "dictionary-index": {
+        "files": 7,
+        "bytes": 16406125,
+        "records": 59997
+      },
+      "search": {
+        "files": 2,
+        "bytes": 27121868,
+        "records": 19684
+      },
+      "dictionary-corpus": {
+        "files": 29,
+        "bytes": 31227348,
+        "records": 18072
+      },
+      "hebrew": {
+        "files": 7,
+        "bytes": 13690860,
+        "records": 44149
+      },
+      "interlinear": {
+        "files": 40,
+        "bytes": 57563422,
+        "records": 306941
+      }
+    }
+  }
+}

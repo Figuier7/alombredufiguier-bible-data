@@ -1,0 +1,13 @@
+{
+  "name": "alombredufiguier-bible-data",
+  "version": "0.1.0",
+  "private": false,
+  "type": "module",
+  "description": "Donnees bibliques francaises runtime pour dictionnaires, lexique hebreu et Bible interlineaire.",
+  "scripts": {
+    "build": "node tools/build-public-package.mjs",
+    "validate": "node tools/validate-release.mjs",
+    "build:from-local": "node tools/build-public-package.mjs ../dictionnaire-biblique-v2"
+  },
+  "license": "CC-BY-4.0"
+}

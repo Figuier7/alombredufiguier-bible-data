@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Figuier Hebrew Lexicon Entry",
+  "type": "object",
+  "required": [
+    "s"
+  ],
+  "properties": {
+    "s": {
+      "type": "string",
+      "pattern": "^H[0-9]+[A-Z]?$"
+    },
+    "h": {
+      "type": "string"
+    },
+    "x": {
+      "type": "string"
+    },
+    "p": {
+      "type": "string"
+    },
+    "d": {
+      "type": "string"
+    },
+    "df": {
+      "type": "string"
+    },
+    "g": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "ig": {
+      "type": "string"
+    },
+    "bd": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

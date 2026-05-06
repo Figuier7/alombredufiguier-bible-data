@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Figuier Concept",
+  "type": "object",
+  "required": [
+    "concept_id",
+    "label",
+    "entries"
+  ],
+  "properties": {
+    "concept_id": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "label_restore": {
+      "type": "string"
+    },
+    "display_titles": {
+      "type": "object"
+    },
+    "public_forms": {
+      "type": "object"
+    },
+    "aliases": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "category": {
+      "type": "string"
+    },
+    "alpha_letter": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "related_concepts": {
+      "type": "array"
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Figuier Interlinear Search Index",
+  "type": "object",
+  "required": [
+    "schema",
+    "columns",
+    "books",
+    "refs"
+  ],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "schema": {
+      "type": "string"
+    },
+    "columns": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "books": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "refs": {
+      "type": "array",
+      "items": {
+        "type": "array"
+      }
+    }
+  },
+  "additionalProperties": true
+}
