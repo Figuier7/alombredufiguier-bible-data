@@ -45,9 +45,45 @@ function parseJsonOrJsonl(rel, kind) {
   }
   return readJson(rel);
 }
+function recordCount(kind, parsed) {
+  if (kind === 'jsonl') return parsed.length;
+  if (Array.isArray(parsed)) return parsed.length;
+  if (parsed && typeof parsed === 'object') {
+    if (Array.isArray(parsed.refs)) return parsed.refs.length;
+    if (Array.isArray(parsed.docs)) return parsed.docs.length;
+    return Object.keys(parsed).length;
+  }
+  return null;
+}
 function findStrong(entries, strong) {
   return Array.isArray(entries) && entries.some((entry) => entry && entry.s === strong);
 }
+function scanStrings(value, visitor, jsonPath = '$') {
+  if (typeof value === 'string') {
+    visitor(value, jsonPath);
+    return;
+  }
+  if (Array.isArray(value)) {
+    value.forEach((item, index) => scanStrings(item, visitor, `${jsonPath}[${index}]`));
+    return;
+  }
+  if (value && typeof value === 'object') {
+    for (const [key, inner] of Object.entries(value)) {
+      scanStrings(inner, visitor, `${jsonPath}.${key}`);
+    }
+  }
+}
+function hasNoText(value) {
+  return typeof value !== 'string' || value.trim() === '';
+}
+const mojibakeMarkers = [
+  '\u00c3\u0192',
+  '\u00c3\u201a',
+  '\u00c3\u00a2\u20ac',
+  '\u00e2\u20ac',
+  '\u00c2\u00a0',
+  '\ufffd'
+];
 
 const manifestPath = path.join(repoRoot, 'data/manifest.json');
 if (!fs.existsSync(manifestPath)) fail('Missing data/manifest.json. Run tools/build-public-package.mjs first.');
@@ -60,6 +96,7 @@ for (const rel of repoFiles) {
 }
 
 let totalBytes = 0;
+const parsedByPath = new Map();
 for (const item of manifest.files) {
   const file = path.join(repoRoot, item.path);
   if (!fs.existsSync(file)) fail('Manifest file missing: ' + item.path);
@@ -68,7 +105,10 @@ for (const item of manifest.files) {
   if (stat.size > maxBytes) fail('File exceeds 95 MB: ' + item.path);
   const digest = sha256(file);
   if (digest !== item.sha256) fail('SHA-256 mismatch: ' + item.path);
-  parseJsonOrJsonl(item.path, item.kind);
+  const parsed = parseJsonOrJsonl(item.path, item.kind);
+  parsedByPath.set(item.path, parsed);
+  const records = recordCount(item.kind, parsed);
+  if (records !== item.records) fail('Record count mismatch: ' + item.path);
   totalBytes += stat.size;
 }
 if (manifest.stats?.files !== manifest.files.length) fail('Manifest stats.files mismatch.');
@@ -82,6 +122,59 @@ const slugMap = readJson('data/dictionaries/slug-map.json');
 const conceptSlugs = readJson('data/dictionaries/concept-url-slugs.json');
 if (slugMap.blanchiment !== 'whitewash' || conceptSlugs.whitewash !== 'blanchiment') fail('Canary failed: whitewash/blanchiment');
 if (slugMap['versions-coptes'] !== 'coptic-versions' || conceptSlugs['coptic-versions'] !== 'versions-coptes') fail('Canary failed: versions-coptes');
+for (const [conceptId, slug] of Object.entries(conceptSlugs)) {
+  if (slugMap[slug] !== conceptId) fail(`Canonical slug is not reversible: ${conceptId} -> ${slug} -> ${slugMap[slug]}`);
+}
+if (conceptSlugs.archedutemoignage !== 'arche-du-temoignage-isbe' || slugMap['arche-du-temoignage-isbe'] !== 'archedutemoignage') {
+  fail('Canary failed: arche-du-temoignage-isbe');
+}
+for (const [slug, conceptId] of Object.entries({
+  iyzebel: 'jezebel',
+  mattithyah: 'matthaios',
+  matyah: 'matyah',
+  loi: 'loi'
+})) {
+  if (slugMap[slug] !== conceptId) fail(`Canary failed: ${slug} -> ${conceptId}`);
+}
+
+const emptyReadyDefinitions = [];
+for (const item of manifest.files.filter((entry) => entry.group === 'dictionary-corpus')) {
+  const parsed = parsedByPath.get(item.path);
+  if (!Array.isArray(parsed)) continue;
+  parsed.forEach((entry, index) => {
+    if (entry?.status === 'ready' && hasNoText(entry.definition)) {
+      emptyReadyDefinitions.push(`${item.path}[${index}] ${entry.id || ''} ${entry.mot || entry.label_fr || ''}`.trim());
+    }
+  });
+}
+if (emptyReadyDefinitions.length) fail('Ready dictionary entries with empty definition: ' + emptyReadyDefinitions.slice(0, 10).join('; '));
+
+const mojibakeHits = [];
+for (const [rel, parsed] of parsedByPath) {
+  scanStrings(parsed, (text, jsonPath) => {
+    const marker = mojibakeMarkers.find((item) => text.includes(item));
+    if (marker) mojibakeHits.push(`${rel}${jsonPath} marker=${JSON.stringify(marker)}`);
+  });
+}
+if (mojibakeHits.length) fail('True mojibake markers found: ' + mojibakeHits.slice(0, 10).join('; '));
+
+const bymEntries = readJson('data/dictionaries/bym/bym-lexicon.entries.json');
+if (!Array.isArray(bymEntries) || bymEntries.length !== 515) fail('BYM canary failed: expected 515 entries.');
+if (bymEntries.some((entry) => JSON.stringify(entry).toUpperCase().includes('LOL'))) fail('BYM canary failed: contains LOL.');
+const bymByMot = new Map(bymEntries.map((entry) => [entry.mot, entry]));
+for (const [mot, target] of Object.entries({
+  TORAH: 'Loi',
+  JÉZABEL: 'Iyzebel',
+  MATTHIEU: 'Mattithyah',
+  MATTHIAS: 'Matyah'
+})) {
+  const entry = bymByMot.get(mot);
+  if (!entry) fail('BYM canary failed: missing ' + mot);
+  if (String(entry.redirect_target_label || '').toLocaleLowerCase('fr') !== target.toLocaleLowerCase('fr')) {
+    fail(`BYM canary failed: ${mot} redirects to ${entry.redirect_target_label}, expected ${target}`);
+  }
+}
+if (!bymEntries.some((entry) => String(entry.mot || '').startsWith('ALLÉLOU-YAH'))) fail('BYM canary failed: missing ALLÉLOU-YAH.');
 const interlinear = readJson('data/interlinear/at-search-index.json');
 const strongIndex = interlinear.columns.indexOf('s');
 const xIndex = interlinear.columns.indexOf('x');
