@@ -84,6 +84,23 @@ const mojibakeMarkers = [
   '\u00c2\u00a0',
   '\ufffd'
 ];
+const mixedVisibleRe = /\b(Against|According|Angel Of|Balm Of|Book Of|Brethren|Camel'?S Hair|Chambers|Coming|Cutting Off|Day Of|Floor|Ghost|Goats'? Hair|Heavens|Hosts|Journey|Lake Of|Lord|Middle Wall|Mount Of|New Heavens|Partition|Plucking|Second Coming|Sheep|Signs Of|Threshing|Tower Of|Wall Of)\b/i;
+const unreviewedDefinitionRe = /\b(generally rendered|where the word is variously rendered|a different Hebrew word|This is the Version autorisee rendering|Version autorisee rendering|Meaning of the Word|All authorities agree|Old English|Authorized Version|Revised Version|see [A-Z][A-Za-z]+|\(see [A-Z][A-Za-z]+|the Lord|Holy Ghost|Holy Spirit)\b/i;
+const reviewedDefinitionPatterns = [
+  /King James Version/gi,
+  /Version Autorisée King James/gi,
+  /King James Version Révisée/gi,
+  /American Standard King James Version Revisee/gi,
+  /British and American/gi,
+  /The Lord's Prayer/gi,
+  /They That Fear the Lord/gi,
+  /Heb\./gi,
+  /Gr\./gi,
+  /LXX/gi
+];
+function stripReviewedDefinitionText(text) {
+  return reviewedDefinitionPatterns.reduce((next, pattern) => next.replace(pattern, ''), text);
+}
 
 const manifestPath = path.join(repoRoot, 'data/manifest.json');
 if (!fs.existsSync(manifestPath)) fail('Missing data/manifest.json. Run tools/build-public-package.mjs first.');
@@ -138,6 +155,8 @@ for (const [slug, conceptId] of Object.entries({
 }
 
 const emptyReadyDefinitions = [];
+const mixedVisibleLabels = [];
+const unreviewedDefinitionResidues = [];
 for (const item of manifest.files.filter((entry) => entry.group === 'dictionary-corpus')) {
   const parsed = parsedByPath.get(item.path);
   if (!Array.isArray(parsed)) continue;
@@ -145,9 +164,45 @@ for (const item of manifest.files.filter((entry) => entry.group === 'dictionary-
     if (entry?.status === 'ready' && hasNoText(entry.definition)) {
       emptyReadyDefinitions.push(`${item.path}[${index}] ${entry.id || ''} ${entry.mot || entry.label_fr || ''}`.trim());
     }
+    if (typeof entry?.label_fr === 'string' && mixedVisibleRe.test(entry.label_fr)) {
+      mixedVisibleLabels.push(`${item.path}[${index}] ${entry.id || ''} label_fr=${entry.label_fr}`.trim());
+    }
+    if (typeof entry?.definition === 'string' && unreviewedDefinitionRe.test(stripReviewedDefinitionText(entry.definition))) {
+      unreviewedDefinitionResidues.push(`${item.path}[${index}] ${entry.id || ''}`.trim());
+    }
   });
 }
 if (emptyReadyDefinitions.length) fail('Ready dictionary entries with empty definition: ' + emptyReadyDefinitions.slice(0, 10).join('; '));
+if (mixedVisibleLabels.length) fail('Mixed-language visible dictionary labels: ' + mixedVisibleLabels.slice(0, 10).join('; '));
+if (unreviewedDefinitionResidues.length) fail('Unreviewed strong definition residues: ' + unreviewedDefinitionResidues.slice(0, 10).join('; '));
+
+const concepts = readJson('data/dictionaries/concepts.json');
+const conceptIds = new Set(concepts.map((concept) => concept.concept_id));
+const conceptLinks = readJson('data/dictionaries/concept-entry-links.json');
+const orphanLinks = conceptLinks.filter((link) => !conceptIds.has(link.concept_id));
+if (orphanLinks.length) fail('Orphan concept links: ' + orphanLinks.slice(0, 10).map((link) => `${link.entry_id}->${link.concept_id}`).join('; '));
+
+const mixedConceptLabels = [];
+concepts.forEach((concept, index) => {
+  for (const field of ['label', 'label_restore']) {
+    if (typeof concept?.[field] === 'string' && mixedVisibleRe.test(concept[field])) {
+      mixedConceptLabels.push(`concepts[${index}] ${concept.concept_id}.${field}=${concept[field]}`);
+    }
+  }
+  const display = concept.display_titles || {};
+  for (const field of ['primary', 'secondary']) {
+    if (typeof display[field] === 'string' && mixedVisibleRe.test(display[field])) {
+      mixedConceptLabels.push(`concepts[${index}] ${concept.concept_id}.display_titles.${field}=${display[field]}`);
+    }
+  }
+  const publicForms = concept.public_forms || {};
+  for (const field of ['restored_reference', 'french_reference']) {
+    if (typeof publicForms[field] === 'string' && mixedVisibleRe.test(publicForms[field])) {
+      mixedConceptLabels.push(`concepts[${index}] ${concept.concept_id}.public_forms.${field}=${publicForms[field]}`);
+    }
+  }
+});
+if (mixedConceptLabels.length) fail('Mixed-language visible concept labels: ' + mixedConceptLabels.slice(0, 10).join('; '));
 
 const mojibakeHits = [];
 for (const [rel, parsed] of parsedByPath) {
