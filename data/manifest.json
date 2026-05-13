@@ -1,7 +1,7 @@
 {
   "name": "alombredufiguier-bible-data",
   "version": "2026.05.13",
-  "generated_at": "2026-05-13T09:21:38.258Z",
+  "generated_at": "2026-05-13T13:19:01.292Z",
   "source_root_hint": "dictionnaire-biblique-v2",
   "license": "CC BY 4.0",
   "attribution": "Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.",
@@ -11,8 +11,8 @@
       "source": "uploads/dictionnaires/concepts.json",
       "kind": "json",
       "group": "dictionary-index",
-      "bytes": 6295366,
-      "sha256": "a903747bbf84d009d63a5c48b5da9f08c6e1c57632476c9d62361f2eaedb4959",
+      "bytes": 6295413,
+      "sha256": "cce626128dae5b8992337903a6eb656972167d868214c0a85fbd4893f41e09a3",
       "records": 9844
     },
     {
@@ -38,8 +38,8 @@
       "source": "uploads/dictionnaires/concept-meta.json",
       "kind": "json",
       "group": "dictionary-index",
-      "bytes": 3202845,
-      "sha256": "3bb895a54cbdc5573f4cb5aa074caba172313b7abefbcd91cb107ed627ca274e",
+      "bytes": 3202847,
+      "sha256": "8bec9fb6488031ee6c3b9588b438a9a5d556c3c5f55a2acd06f6adb024bb83f9",
       "records": 9844
     },
     {
@@ -47,8 +47,8 @@
       "source": "uploads/dictionnaires/concept-url-slugs.json",
       "kind": "json",
       "group": "dictionary-index",
-      "bytes": 233815,
-      "sha256": "091bb1ed8fc65527a4128e6017524ed9354ccdcfa3d98eff24c61ad1aa551150",
+      "bytes": 233817,
+      "sha256": "8174a2db0e22d5e4169731faf0d6c4bff844640f1ee7d977b9e6c956cada4cb4",
       "records": 9844
     },
     {
@@ -56,9 +56,9 @@
       "source": "uploads/dictionnaires/slug-map.json",
       "kind": "json",
       "group": "dictionary-index",
-      "bytes": 239738,
-      "sha256": "cfd6079ad2302629525cca44d25542bf19b3a436f154aacac40a5681ce56393f",
-      "records": 10027
+      "bytes": 239765,
+      "sha256": "0f517dde69e2348ca5f879dcdfa878cf923da16022c940b1b6c586aba37dbfc2",
+      "records": 10028
     },
     {
       "path": "data/dictionaries/browse-index.json",
@@ -66,7 +66,7 @@
       "kind": "json",
       "group": "dictionary-index",
       "bytes": 1904334,
-      "sha256": "7e9746335619dfbdd5b55edbf62ddb19affb73843aa422d4ea02720d54ac8306",
+      "sha256": "9916029d0006ff6efb24b5389668c84f5f880fc2c7a24b136d486e40c7ba3c7e",
       "records": 4
     },
     {
@@ -774,12 +774,12 @@
   ],
   "stats": {
     "files": 85,
-    "bytes": 143961644,
+    "bytes": 143961722,
     "by_group": {
       "dictionary-index": {
         "files": 7,
-        "bytes": 14511645,
-        "records": 60122
+        "bytes": 14511723,
+        "records": 60123
       },
       "search": {
         "files": 2,
