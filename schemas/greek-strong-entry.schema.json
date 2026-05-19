@@ -40,7 +40,7 @@
       "minLength": 1
     },
     "status": {
-      "const": "curated"
+      "const": "curated_bym"
     },
     "source": {
       "type": "object",

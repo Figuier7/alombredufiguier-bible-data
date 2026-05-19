@@ -253,12 +253,18 @@ if (!greekStrongManifest) fail('Missing public Greek Strong lexicon in manifest.
 if (greekStrongManifest.group !== 'greek') fail('Greek Strong lexicon must use manifest group `greek`.');
 const greekStrong = parsedByPath.get(greekStrongPath);
 if (!Array.isArray(greekStrong) || greekStrong.length === 0) fail('Greek Strong lexicon must be a non-empty array.');
+if (greekStrong.length < 30) fail('Greek Strong lexicon must include at least the BYM curated batch 1 entries.');
 const greekStrongById = new Map(greekStrong.map((entry) => [entry.strong, entry]));
 for (const strong of ['G2316', 'G2424', 'G2962', 'G4151', 'G5547', 'G3588', 'G2532', 'G846', 'G1510', 'G3004']) {
   if (!greekStrongById.has(strong)) fail('Missing Greek Strong canary: ' + strong);
 }
 const forbiddenGreekSourceKeys = new Set(['definition_en', 'strongs_def', 'kjv_def', 'derivation_en', 'strongs_derivation']);
 const greekEnglishResidueRe = /\b(the|and|also|even|that|which|from|of|by|with|used|figuratively|properly|derivation|definition|lord|god|self|say|speak)\b/i;
+const greekNonBymTerminologyRe = /\b(Jesus|God|Lord|Messiah|Holy Spirit|New Testament|Old Testament|Nouveau Testament|Ancien Testament)\b/i;
+const greekRawChristRe = /\bChrist\b/;
+function stripAllowedGreekBymForms(value) {
+  return String(value || '').replaceAll('Mashiah (Christ)', '');
+}
 function containsForbiddenKey(value) {
   if (Array.isArray(value)) return value.some(containsForbiddenKey);
   if (value && typeof value === 'object') {
@@ -273,11 +279,16 @@ greekStrong.forEach((entry, index) => {
     }
   }
   if (!/^G\d+$/.test(entry.strong)) fail(`Greek Strong entry ${index} has invalid strong: ${entry.strong}`);
-  if (entry.status !== 'curated') fail(`Greek Strong entry ${entry.strong} is not curated.`);
+  if (entry.status !== 'curated_bym') fail(`Greek Strong entry ${entry.strong} is not curated_bym.`);
   if (containsForbiddenKey(entry)) fail(`Greek Strong entry ${entry.strong} exposes source-English fields.`);
   for (const field of ['gloss_fr', 'definition_fr', 'derivation_fr']) {
-    if (greekEnglishResidueRe.test(String(entry[field] || ''))) {
+    const fieldValue = String(entry[field] || '');
+    if (greekEnglishResidueRe.test(fieldValue)) {
       fail(`Greek Strong entry ${entry.strong}.${field} has possible English residue.`);
+    }
+    const terminologyValue = stripAllowedGreekBymForms(fieldValue);
+    if (greekNonBymTerminologyRe.test(terminologyValue) || greekRawChristRe.test(terminologyValue)) {
+      fail(`Greek Strong entry ${entry.strong}.${field} has non-BYM terminology.`);
     }
   }
   const source = entry.source || {};
