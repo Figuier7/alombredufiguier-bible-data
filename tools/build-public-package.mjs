@@ -29,6 +29,7 @@ const baseSpecs = [
   ['uploads/dictionnaires/strong-root-families-enriched.json', 'data/hebrew/strong-root-families-enriched.json', 'json', 'hebrew'],
   ['uploads/dictionnaires/concept-strong-map.json', 'data/hebrew/concept-strong-map.json', 'json', 'hebrew'],
   ['uploads/dictionnaires/concept-french-strong-map.json', 'data/hebrew/concept-french-strong-map.json', 'json', 'hebrew'],
+  ['uploads/dictionnaires/greek/greek-strong-lexicon-fr.json', 'data/greek/greek-strong-lexicon-fr.json', 'json', 'greek'],
   ['uploads/dictionnaires/interlinear/at-search-index.json', 'data/interlinear/at-search-index.json', 'json', 'interlinear']
 ];
 

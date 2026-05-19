@@ -8,6 +8,7 @@ Ce depot contient des donnees runtime documentees et versionnees, sans dependanc
 
 - `data/dictionaries/` : concepts, slugs, liens entre concepts et entrees, index browse/search, corpus BYM, Easton, Smith et ISBE.
 - `data/hebrew/` : lexique hebreu compact, concordance Strong, familles de racines et mappings Strong/concepts.
+- `data/greek/` : lexique Strong grec francais relu, derive du Strong original public domain.
 - `data/interlinear/` : livres interlineaires de l'Ancien Testament et index de recherche AT.
 - `data/indexes/` : artefacts de recherche globaux pour les concepts du dictionnaire biblique.
 - `schemas/` : schemas JSON indicatifs pour integrateurs.

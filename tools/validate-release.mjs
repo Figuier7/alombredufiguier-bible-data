@@ -106,10 +106,19 @@ const manifestPath = path.join(repoRoot, 'data/manifest.json');
 if (!fs.existsSync(manifestPath)) fail('Missing data/manifest.json. Run tools/build-public-package.mjs first.');
 const manifest = readJson('data/manifest.json');
 if (!Array.isArray(manifest.files) || manifest.files.length === 0) fail('Manifest has no files.');
+const expectedFileCount = 86;
+if (manifest.files.length !== expectedFileCount) fail(`Manifest file count mismatch: expected ${expectedFileCount}, got ${manifest.files.length}.`);
 
 const repoFiles = walk(repoRoot);
 for (const rel of repoFiles) {
   if (bannedPatterns.some((pattern) => pattern.test(rel))) fail('Forbidden file in public repo: ' + rel);
+  if (
+    rel.startsWith('data/hebrew-greek/') ||
+    rel.includes('/lxx-occurrences/') ||
+    rel.includes('hebrew-greek-lxx-map')
+  ) {
+    fail('CATSS/LXX Hebrew-Greek runtime must not be published in public repo: ' + rel);
+  }
 }
 
 let totalBytes = 0;
@@ -237,6 +246,45 @@ const gIndex = interlinear.columns.indexOf('g');
 if (strongIndex < 0 || !interlinear.refs.some((row) => row[strongIndex] === 'H4714')) fail('Interlinear canary failed: H4714');
 const hasMitsrayim = interlinear.refs.some((row) => String(row[xIndex] || '').toLowerCase().includes('mitsrayim') || String(row[gIndex] || '').toLowerCase().includes('mitsrayim'));
 if (!hasMitsrayim) fail('Interlinear canary failed: Mitsrayim');
+
+const greekStrongPath = 'data/greek/greek-strong-lexicon-fr.json';
+const greekStrongManifest = manifest.files.find((item) => item.path === greekStrongPath);
+if (!greekStrongManifest) fail('Missing public Greek Strong lexicon in manifest.');
+if (greekStrongManifest.group !== 'greek') fail('Greek Strong lexicon must use manifest group `greek`.');
+const greekStrong = parsedByPath.get(greekStrongPath);
+if (!Array.isArray(greekStrong) || greekStrong.length === 0) fail('Greek Strong lexicon must be a non-empty array.');
+const greekStrongById = new Map(greekStrong.map((entry) => [entry.strong, entry]));
+for (const strong of ['G2316', 'G2424', 'G2962', 'G4151', 'G5547', 'G3588', 'G2532', 'G846', 'G1510', 'G3004']) {
+  if (!greekStrongById.has(strong)) fail('Missing Greek Strong canary: ' + strong);
+}
+const forbiddenGreekSourceKeys = new Set(['definition_en', 'strongs_def', 'kjv_def', 'derivation_en', 'strongs_derivation']);
+const greekEnglishResidueRe = /\b(the|and|also|even|that|which|from|of|by|with|used|figuratively|properly|derivation|definition|lord|god|self|say|speak)\b/i;
+function containsForbiddenKey(value) {
+  if (Array.isArray(value)) return value.some(containsForbiddenKey);
+  if (value && typeof value === 'object') {
+    return Object.entries(value).some(([key, inner]) => forbiddenGreekSourceKeys.has(key) || containsForbiddenKey(inner));
+  }
+  return false;
+}
+greekStrong.forEach((entry, index) => {
+  for (const field of ['strong', 'lemma', 'translit', 'gloss_fr', 'definition_fr', 'derivation_fr', 'status', 'source']) {
+    if (entry?.[field] === undefined || entry[field] === null || entry[field] === '') {
+      fail(`Greek Strong entry ${index} missing required field: ${field}`);
+    }
+  }
+  if (!/^G\d+$/.test(entry.strong)) fail(`Greek Strong entry ${index} has invalid strong: ${entry.strong}`);
+  if (entry.status !== 'curated') fail(`Greek Strong entry ${entry.strong} is not curated.`);
+  if (containsForbiddenKey(entry)) fail(`Greek Strong entry ${entry.strong} exposes source-English fields.`);
+  for (const field of ['gloss_fr', 'definition_fr', 'derivation_fr']) {
+    if (greekEnglishResidueRe.test(String(entry[field] || ''))) {
+      fail(`Greek Strong entry ${entry.strong}.${field} has possible English residue.`);
+    }
+  }
+  const source = entry.source || {};
+  if (source.license !== 'Public Domain' || source.year !== 1890) {
+    fail(`Greek Strong entry ${entry.strong} has invalid source metadata.`);
+  }
+});
 
 console.log('Release validation OK');
 console.log('files=' + manifest.files.length);
