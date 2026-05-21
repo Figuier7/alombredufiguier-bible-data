@@ -243,9 +243,20 @@ const interlinear = readJson('data/interlinear/at-search-index.json');
 const strongIndex = interlinear.columns.indexOf('s');
 const xIndex = interlinear.columns.indexOf('x');
 const gIndex = interlinear.columns.indexOf('g');
+const cIndex = interlinear.columns.indexOf('c');
+const vIndex = interlinear.columns.indexOf('v');
+const mIndex = interlinear.columns.indexOf('m');
 if (strongIndex < 0 || !interlinear.refs.some((row) => row[strongIndex] === 'H4714')) fail('Interlinear canary failed: H4714');
 const hasMitsrayim = interlinear.refs.some((row) => String(row[xIndex] || '').toLowerCase().includes('mitsrayim') || String(row[gIndex] || '').toLowerCase().includes('mitsrayim'));
 if (!hasMitsrayim) fail('Interlinear canary failed: Mitsrayim');
+const h7363Entries = hebrew.filter((entry) => ['H7363', 'H7363A', 'H7363B'].includes(entry.s));
+if (h7363Entries.length !== 3 || h7363Entries.some((entry) => entry.lg !== 'H7363')) fail('Hebrew lexeme group canary failed: H7363 variants');
+const h7363Glosses = interlinear.refs
+  .filter((row) => row[strongIndex] === 'H7363')
+  .map((row) => `${row[cIndex]}.${row[vIndex]}|${row[mIndex]}|${row[gIndex]}`);
+for (const expected of ['1.2|HVprfsa|planer', '32.11|HVpi3ms|planer', '23.9|HVqp3cp|se détendre']) {
+  if (!h7363Glosses.includes(expected)) fail('Interlinear canary failed: H7363 ' + expected);
+}
 
 const greekStrongPath = 'data/greek/greek-strong-lexicon-fr.json';
 const greekStrongManifest = manifest.files.find((item) => item.path === greekStrongPath);
