@@ -241,6 +241,7 @@ for (const [mot, target] of Object.entries({
 if (!bymEntries.some((entry) => String(entry.mot || '').startsWith('ALLÉLOU-YAH'))) fail('BYM canary failed: missing ALLÉLOU-YAH.');
 const interlinear = readJson('data/interlinear/at-search-index.json');
 const strongIndex = interlinear.columns.indexOf('s');
+const saIndex = interlinear.columns.indexOf('sa');
 const xIndex = interlinear.columns.indexOf('x');
 const gIndex = interlinear.columns.indexOf('g');
 const cIndex = interlinear.columns.indexOf('c');
@@ -249,6 +250,11 @@ const mIndex = interlinear.columns.indexOf('m');
 if (strongIndex < 0 || !interlinear.refs.some((row) => row[strongIndex] === 'H4714')) fail('Interlinear canary failed: H4714');
 const hasMitsrayim = interlinear.refs.some((row) => String(row[xIndex] || '').toLowerCase().includes('mitsrayim') || String(row[gIndex] || '').toLowerCase().includes('mitsrayim'));
 if (!hasMitsrayim) fail('Interlinear canary failed: Mitsrayim');
+const h2416eRows = interlinear.refs.filter((row) => row[strongIndex] === 'H2416' && row[saIndex] === 'E');
+if (h2416eRows.length !== 147) fail('Interlinear canary failed: H2416E expected 147 refs, got ' + h2416eRows.length);
+if (h2416eRows.some((row) => row[xIndex] !== 'ḥayyîm' || row[gIndex] !== 'vies')) {
+  fail('Interlinear canary failed: H2416E must display ḥayyîm / vies');
+}
 const h7363Entries = hebrew.filter((entry) => ['H7363', 'H7363A', 'H7363B'].includes(entry.s));
 if (h7363Entries.length !== 3 || h7363Entries.some((entry) => entry.lg !== 'H7363')) fail('Hebrew lexeme group canary failed: H7363 variants');
 const h7363Glosses = interlinear.refs
