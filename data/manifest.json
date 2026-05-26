@@ -1,7 +1,7 @@
 {
   "name": "alombredufiguier-bible-data",
-  "version": "2026.05.21.3",
-  "generated_at": "2026-05-21T19:41:40.517Z",
+  "version": "2026.05.26.1",
+  "generated_at": "2026-05-26T15:42:13.320Z",
   "source_root_hint": "dictionnaire-biblique-v2",
   "license": "CC BY 4.0",
   "attribution": "Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.",
@@ -119,8 +119,8 @@
       "source": "uploads/dictionnaires/hebrew/hebrew-lexicon-fr-compact.json",
       "kind": "json",
       "group": "hebrew",
-      "bytes": 3766015,
-      "sha256": "7b14341e0f0bd0fe3bfa6221091a2e18a1a3365bb22325c0c951601933a55d4f",
+      "bytes": 3748332,
+      "sha256": "4d56325ee249634fc43cb1b2dfcf8f6d62078682a75bcf4b08afd5b490970290",
       "records": 9831
     },
     {
@@ -783,7 +783,7 @@
   ],
   "stats": {
     "files": 86,
-    "bytes": 145101930,
+    "bytes": 145084247,
     "by_group": {
       "dictionary-index": {
         "files": 7,
@@ -802,7 +802,7 @@
       },
       "hebrew": {
         "files": 7,
-        "bytes": 13825671,
+        "bytes": 13807988,
         "records": 44162
       },
       "greek": {
