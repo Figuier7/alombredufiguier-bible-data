@@ -1,7 +1,7 @@
 {
   "name": "alombredufiguier-bible-data",
   "version": "2026.05.27",
-  "generated_at": "2026-05-26T22:56:36.927Z",
+  "generated_at": "2026-05-27T09:24:43.946Z",
   "source_root_hint": "dictionnaire-biblique-v2",
   "license": "CC BY 4.0",
   "attribution": "Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.",
@@ -74,8 +74,8 @@
       "source": "uploads/dictionnaires/search-index.json",
       "kind": "json",
       "group": "search",
-      "bytes": 15269709,
-      "sha256": "e40797570223d28fd6fed5faed9a6a5d0f20ce7ae9123a112994941f47008c6c",
+      "bytes": 15269670,
+      "sha256": "048d99b94c02f01870bd1b1a938c982689e9e75b66abe07e21b88b2af536f48c",
       "records": 9840
     },
     {
@@ -83,8 +83,8 @@
       "source": "uploads/dictionnaires/search-docs.jsonl",
       "kind": "jsonl",
       "group": "search",
-      "bytes": 12228978,
-      "sha256": "9e01de4c76f4d80f5525e290f5293aa228185e58331ff9201c8532440fdd694b",
+      "bytes": 12228939,
+      "sha256": "5ef3675e2da11038b5f57a68afca309851056c75e8ebfedf427de1e84848265b",
       "records": 9840
     },
     {
@@ -101,8 +101,8 @@
       "source": "uploads/dictionnaires/easton/easton.entries.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 4588016,
-      "sha256": "45d18834969dedb19fca99a78e79e911fa17dd3c9ab9094b3d885f72ca856625",
+      "bytes": 4587940,
+      "sha256": "ea140d0283dbcf00b25d3f136e2d888fd20cab01875b08502c9ba1bc72d4e4fa",
       "records": 3963
     },
     {
@@ -110,8 +110,8 @@
       "source": "uploads/dictionnaires/smith/smith.entries.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 4798641,
-      "sha256": "6c5f817e63453d3d5417744c0f03976d95c5de0524b0282ec390f7704222f312",
+      "bytes": 4798609,
+      "sha256": "55ba978855fc1ac5cab143cbf39c5abc46781a55d1d3b719321ff63f5abf2f72",
       "records": 4560
     },
     {
@@ -227,8 +227,8 @@
       "source": "uploads/dictionnaires/isbe/isbe-D.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 969642,
-      "sha256": "225d02610cfb45e00d79e8375d3324f4072480cefc0f927e06ec1fac3ec8853a",
+      "bytes": 969618,
+      "sha256": "46126b9035aa3c10cb4216157d62afb19f0bdbfbf9c8695250f81d5e6a86e433",
       "records": 329
     },
     {
@@ -272,8 +272,8 @@
       "source": "uploads/dictionnaires/isbe/isbe-I.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 515991,
-      "sha256": "64d3fa7893ebe3cdfb49a479f77933d6130e8e33692dc1c185657187f2ac0200",
+      "bytes": 515994,
+      "sha256": "8eaabc4f4a74f32efadfe447a64820420bf65fbe4a72fc197a6d3527e29bdb98",
       "records": 224
     },
     {
@@ -281,8 +281,8 @@
       "source": "uploads/dictionnaires/isbe/isbe-J.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 1320195,
-      "sha256": "70714eef2a556bbf656afd33fd64bfd2bf93cb2d26b9d47bd2aeb65d31db1766",
+      "bytes": 1320196,
+      "sha256": "8f875729814247024baa39e55baf7aea378d9e53a589e867cd3d2f97a7b915f8",
       "records": 462
     },
     {
@@ -299,8 +299,8 @@
       "source": "uploads/dictionnaires/isbe/isbe-L.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 779829,
-      "sha256": "b9a8e65ee9dcdefb57975817f6f1f375ee45286e488f09f22c294aa0f0399c75",
+      "bytes": 779860,
+      "sha256": "5d8513df7b0d5fd26d9bf23bdcff6b58df7c5caf1576d63cb6c3dc2f15654013",
       "records": 245
     },
     {
@@ -326,8 +326,8 @@
       "source": "uploads/dictionnaires/isbe/isbe-O.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 350925,
-      "sha256": "bda792a5d2aa7efffd15746aeb189ce7f20e89dcf7501f281d6b73a92f48b499",
+      "bytes": 350924,
+      "sha256": "9ae3ee1656bc43353d231e1eab7e35494e1481779fb4091d2dfb77964a776af8",
       "records": 176
     },
     {
@@ -363,7 +363,7 @@
       "kind": "json",
       "group": "dictionary-corpus",
       "bytes": 2062370,
-      "sha256": "109d266242bc81231887c121eebb8a6abc4b256c7c7198f4fb998227e64143e4",
+      "sha256": "d6e7bb91593e6b3d09c0cdccc8e728c78da9e56494a908faf4a09b6f8cc9d53b",
       "records": 1017
     },
     {
@@ -371,8 +371,8 @@
       "source": "uploads/dictionnaires/isbe/isbe-T.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 966958,
-      "sha256": "1ee8ad4df7e0de06980815fcc368117492b6e2d8f66b096947ef312e05891861",
+      "bytes": 966957,
+      "sha256": "3fe76a35f52aa9f4d9978efc4e5277b821be0d0eda2542000e88f5851461279d",
       "records": 395
     },
     {
@@ -783,7 +783,7 @@
   ],
   "stats": {
     "files": 86,
-    "bytes": 145116886,
+    "bytes": 145116709,
     "by_group": {
       "dictionary-index": {
         "files": 7,
@@ -792,12 +792,12 @@
       },
       "search": {
         "files": 2,
-        "bytes": 27498687,
+        "bytes": 27498609,
         "records": 19680
       },
       "dictionary-corpus": {
         "files": 29,
-        "bytes": 31151682,
+        "bytes": 31151583,
         "records": 18072
       },
       "hebrew": {
