@@ -1,7 +1,7 @@
 {
   "name": "alombredufiguier-bible-data",
-  "version": "2026.05.27.3",
-  "generated_at": "2026-05-27T15:59:03.097Z",
+  "version": "2026.05.27.1",
+  "generated_at": "2026-05-27T20:28:16.788Z",
   "source_root_hint": "dictionnaire-biblique-v2",
   "license": "CC BY 4.0",
   "attribution": "Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.",
@@ -182,9 +182,9 @@
       "source": "uploads/dictionnaires/greek/greek-strong-lexicon-fr.json",
       "kind": "json",
       "group": "greek",
-      "bytes": 169192,
-      "sha256": "ab15f33163fbe83b668f408b0a8bb63fa31bb10eeea7cb013a70f29d256a73c3",
-      "records": 350
+      "bytes": 239227,
+      "sha256": "7b5a9d266722265a7db9b5873c4fbb7734f982be3a98383c506ad3f34ac04989",
+      "records": 500
     },
     {
       "path": "data/interlinear/at-search-index.json",
@@ -783,7 +783,7 @@
   ],
   "stats": {
     "files": 86,
-    "bytes": 145124710,
+    "bytes": 145194745,
     "by_group": {
       "dictionary-index": {
         "files": 7,
@@ -807,8 +807,8 @@
       },
       "greek": {
         "files": 1,
-        "bytes": 169192,
-        "records": 350
+        "bytes": 239227,
+        "records": 500
       },
       "interlinear": {
         "files": 40,

@@ -270,9 +270,9 @@ if (!greekStrongManifest) fail('Missing public Greek Strong lexicon in manifest.
 if (greekStrongManifest.group !== 'greek') fail('Greek Strong lexicon must use manifest group `greek`.');
 const greekStrong = parsedByPath.get(greekStrongPath);
 if (!Array.isArray(greekStrong) || greekStrong.length === 0) fail('Greek Strong lexicon must be a non-empty array.');
-if (greekStrong.length < 350) fail('Greek Strong lexicon must include at least the BYM curated batch 4 entries.');
+if (greekStrong.length < 500) fail('Greek Strong lexicon must include at least the BYM curated batch 5 entries.');
 const greekStrongById = new Map(greekStrong.map((entry) => [entry.strong, entry]));
-for (const strong of ['G2316', 'G2424', 'G2962', 'G4151', 'G5547', 'G3588', 'G2532', 'G846', 'G1510', 'G3004', 'G1096', 'G2443', 'G235', 'G2064', 'G444', 'G5207', 'G3056', 'G4102', 'G5485', 'G26', 'G3195', 'G3745', 'G225', 'G450', 'G3870', 'G4982', 'G907', 'G1343', 'G4103', 'G4521', 'G2590', 'G1140', 'G4352', 'G4864', 'G1124', 'G4991', 'G2920', 'G2323', 'G4717', 'G2537']) {
+for (const strong of ['G2316', 'G2424', 'G2962', 'G4151', 'G5547', 'G3588', 'G2532', 'G846', 'G1510', 'G3004', 'G1096', 'G2443', 'G235', 'G2064', 'G444', 'G5207', 'G3056', 'G4102', 'G5485', 'G26', 'G3195', 'G3745', 'G225', 'G450', 'G3870', 'G4982', 'G907', 'G1343', 'G4103', 'G4521', 'G2590', 'G1140', 'G4352', 'G4864', 'G1124', 'G4991', 'G2920', 'G2323', 'G4717', 'G2537', 'G264', 'G386', 'G1242', 'G1653', 'G3957', 'G4624', 'G3466', 'G3528', 'G2385', 'G2243']) {
   if (!greekStrongById.has(strong)) fail('Missing Greek Strong canary: ' + strong);
 }
 const forbiddenGreekSourceKeys = new Set(['definition_en', 'strongs_def', 'kjv_def', 'derivation_en', 'strongs_derivation']);
