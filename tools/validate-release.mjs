@@ -244,8 +244,10 @@ const strongIndex = interlinear.columns.indexOf('s');
 const saIndex = interlinear.columns.indexOf('sa');
 const xIndex = interlinear.columns.indexOf('x');
 const gIndex = interlinear.columns.indexOf('g');
+const bIndex = interlinear.columns.indexOf('b');
 const cIndex = interlinear.columns.indexOf('c');
 const vIndex = interlinear.columns.indexOf('v');
+const iIndex = interlinear.columns.indexOf('i');
 const mIndex = interlinear.columns.indexOf('m');
 if (strongIndex < 0 || !interlinear.refs.some((row) => row[strongIndex] === 'H4714')) fail('Interlinear canary failed: H4714');
 const hasMitsrayim = interlinear.refs.some((row) => String(row[xIndex] || '').toLowerCase().includes('mitsrayim') || String(row[gIndex] || '').toLowerCase().includes('mitsrayim'));
@@ -254,6 +256,13 @@ const h2416eRows = interlinear.refs.filter((row) => row[strongIndex] === 'H2416'
 if (h2416eRows.length !== 147) fail('Interlinear canary failed: H2416E expected 147 refs, got ' + h2416eRows.length);
 if (h2416eRows.some((row) => row[xIndex] !== 'ḥayyîm' || row[gIndex] !== 'vies')) {
   fail('Interlinear canary failed: H2416E must display ḥayyîm / vies');
+}
+const gen156H539 = interlinear.refs.find((row) => {
+  const book = interlinear.books[row[bIndex]];
+  return book && book.osis === 'Gen' && row[cIndex] === 15 && row[vIndex] === 6 && row[iIndex] === 1 && row[strongIndex] === 'H539';
+});
+if (!gen156H539 || gen156H539[gIndex] !== 'faire confiance') {
+  fail('Interlinear canary failed: Gen.15.6 H539 must display `faire confiance`.');
 }
 const h7363Entries = hebrew.filter((entry) => ['H7363', 'H7363A', 'H7363B'].includes(entry.s));
 if (h7363Entries.length !== 3 || h7363Entries.some((entry) => entry.lg !== 'H7363')) fail('Hebrew lexeme group canary failed: H7363 variants');

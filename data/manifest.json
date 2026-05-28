@@ -1,7 +1,7 @@
 {
   "name": "alombredufiguier-bible-data",
-  "version": "2026.05.27.2",
-  "generated_at": "2026-05-27T20:55:21.280Z",
+  "version": "2026.05.28",
+  "generated_at": "2026-05-28T08:36:08.394Z",
   "source_root_hint": "dictionnaire-biblique-v2",
   "license": "CC BY 4.0",
   "attribution": "Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.",
@@ -191,8 +191,8 @@
       "source": "uploads/dictionnaires/interlinear/at-search-index.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 33694550,
-      "sha256": "95e286caaf6f88e62c9a14a4944c00fe4f64f9a038d50f6187b740878cb1e17c",
+      "bytes": 33696317,
+      "sha256": "3829dad0ee976b6574f05cdf51c121fec4934788415a7ef799ccf10a4adee93e",
       "records": 306785
     },
     {
@@ -434,8 +434,8 @@
       "source": "uploads/dictionnaires/interlinear/at/01-Gen.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1608048,
-      "sha256": "c1d3eab8c47f888a62f151255f7b3a45d717afa16a78c9a8864f796dd1e79208",
+      "bytes": 1608060,
+      "sha256": "dc51b469e9bf2b721d230c12556f7c0b59d4ed839a6734e3c045887320b924d8",
       "records": 4
     },
     {
@@ -443,8 +443,8 @@
       "source": "uploads/dictionnaires/interlinear/at/02-Exod.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1312355,
-      "sha256": "09fcdc50a3d98868c697bcca50e073b02d08cbe2adedcd5f1103567abcf25117",
+      "bytes": 1312395,
+      "sha256": "08e022b32fbf6cfc800249442f969c380dd2b02bdd63056fed84af9e30480366",
       "records": 4
     },
     {
@@ -461,8 +461,8 @@
       "source": "uploads/dictionnaires/interlinear/at/04-Num.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1295208,
-      "sha256": "0679c03b3cbd94d070b67c2befc1e7734b565491682f13bf68a74f6c50c05c1e",
+      "bytes": 1295220,
+      "sha256": "14aa0023653f039abda8207e33f50241a9f8ba159e9bc1fc32cada3dda8ddbf3",
       "records": 4
     },
     {
@@ -470,8 +470,8 @@
       "source": "uploads/dictionnaires/interlinear/at/05-Deut.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1121831,
-      "sha256": "6edc27f168658195399af03ba638acfa052b0faaa68d4170a7966c215a6d4677",
+      "bytes": 1121852,
+      "sha256": "b2e74b79ca48bd8574d00d277aa98faecdeaa09676edd4634e31e5413de5e4dc",
       "records": 4
     },
     {
@@ -488,8 +488,8 @@
       "source": "uploads/dictionnaires/interlinear/at/07-Judg.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 777798,
-      "sha256": "2799e891311e9e3cf5fa4e9feaa39c6eea5385c7df596deebff125c4c3cf8229",
+      "bytes": 777803,
+      "sha256": "010d3297f966475e1f9e7711963d6496dd66bfc6370be2b339cc3444225ae93a",
       "records": 4
     },
     {
@@ -497,8 +497,8 @@
       "source": "uploads/dictionnaires/interlinear/at/08-Ruth.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 101627,
-      "sha256": "8ddf1eefc7685b99305a1f2c619d8e4dc098b0df3c46f72e0d1bea00b2138937",
+      "bytes": 101625,
+      "sha256": "151ec9f4aaed584454875abb89bab589deacdfeb02a44eb47379f722256eca01",
       "records": 4
     },
     {
@@ -506,8 +506,8 @@
       "source": "uploads/dictionnaires/interlinear/at/09-1Sam.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1044781,
-      "sha256": "dfa20c7356b687951f57df5e40ec0e1aa0bc0966e52587e40b73f4513490aa32",
+      "bytes": 1044796,
+      "sha256": "bc1103a8f0cef70327e481d978b60cb27545d08d8cb64d440b55fb7ae23335cd",
       "records": 4
     },
     {
@@ -515,8 +515,8 @@
       "source": "uploads/dictionnaires/interlinear/at/10-2Sam.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 868772,
-      "sha256": "4f8710130ded404c06f2c760f1a6b7b27e4dc1ee190134844feb287d09f5a054",
+      "bytes": 868770,
+      "sha256": "5bda94a98904cfe576074db9bacceff9e6a32a67d7f53c5ca7ede4415095787c",
       "records": 4
     },
     {
@@ -524,8 +524,8 @@
       "source": "uploads/dictionnaires/interlinear/at/11-1Kgs.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1035848,
-      "sha256": "2c602b22b112c34dbb95a06ae85b4358220befde075af2640019167102694e43",
+      "bytes": 1035857,
+      "sha256": "73b268c48be2c74f6bf4ccc26964a4fc828128492ae7c1a5682e01fdfdef68c7",
       "records": 4
     },
     {
@@ -533,8 +533,8 @@
       "source": "uploads/dictionnaires/interlinear/at/12-2Kgs.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 972275,
-      "sha256": "fbfb91f832b877c6718657af259bb2eadb3ce1746efdfbe611d11f7df5868015",
+      "bytes": 972274,
+      "sha256": "4944efe0fd032d0031114c9d767385f61f6848250284c9a654da067ff0a70e31",
       "records": 4
     },
     {
@@ -542,8 +542,8 @@
       "source": "uploads/dictionnaires/interlinear/at/13-1Chr.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 863200,
-      "sha256": "7a53709e8a8e166742d217e395b55613a6d39dc9567e65d0c594fcb6ca56ab41",
+      "bytes": 863204,
+      "sha256": "fca9714f681eaac5dec864b9b6eb0fe37acd5caadd2afafe31b4e1c0377c6ff5",
       "records": 4
     },
     {
@@ -551,8 +551,8 @@
       "source": "uploads/dictionnaires/interlinear/at/14-2Chr.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1070013,
-      "sha256": "4c4b3be5e528c602713befa6040fae0eec9adb058ae14e0e3a8c351bce0078ec",
+      "bytes": 1070039,
+      "sha256": "ce690a0b270b8dde79f9f0c3a241495e1fd13cb25d6a32171872a368b5afedf8",
       "records": 4
     },
     {
@@ -569,8 +569,8 @@
       "source": "uploads/dictionnaires/interlinear/at/16-Neh.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 431144,
-      "sha256": "2ed4cbe026d5d8a2320618f31df45e539829a93ec4b22894c9facf00387767f2",
+      "bytes": 431148,
+      "sha256": "d020e5fa92961a61c24258d7507944745fbe68d96bc53447c8d005370f0fc707",
       "records": 4
     },
     {
@@ -578,8 +578,8 @@
       "source": "uploads/dictionnaires/interlinear/at/17-Esth.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 242350,
-      "sha256": "6caa861209fd26392d3a397ef9c27127c8560e200541d7c9f3bd26eb79532044",
+      "bytes": 242347,
+      "sha256": "497fc278608f72db7c1e880cfc489ad5d9f4255e308f1eebd872ebd03d1c56c5",
       "records": 4
     },
     {
@@ -587,8 +587,8 @@
       "source": "uploads/dictionnaires/interlinear/at/18-Job.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 665672,
-      "sha256": "605e2d7f4e5b74db89bf8eb807ca8ea404153622584a8fd2466a75c149795015",
+      "bytes": 665719,
+      "sha256": "5cd1e6792e3578b796ad43df6a815f3c6406719f86b89816bde2f943b48ff32c",
       "records": 4
     },
     {
@@ -596,8 +596,8 @@
       "source": "uploads/dictionnaires/interlinear/at/19-Ps.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1595575,
-      "sha256": "c677cef8c0725364b9a0eefd00374a84b52d9a1964520d3cfcc1f0f8cbceb39f",
+      "bytes": 1595622,
+      "sha256": "7d40aaa4ae2252b521de0aeb957197ead44457c56da4b280304d547fca2c1c11",
       "records": 4
     },
     {
@@ -605,8 +605,8 @@
       "source": "uploads/dictionnaires/interlinear/at/20-Prov.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 559100,
-      "sha256": "9637c93fa4c6e2cd61a5c3ebf9b5ae0bda333855607452604095cb6459520e3c",
+      "bytes": 559116,
+      "sha256": "394c525528313abb08b266cfd7ef2cb5cf9323f677c9efdfd311ed608ab4193b",
       "records": 4
     },
     {
@@ -632,8 +632,8 @@
       "source": "uploads/dictionnaires/interlinear/at/23-Isa.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1351768,
-      "sha256": "c8c9060260e58488a87e681d8cc2f16bb654ec8f2e365e0bf80536c542943381",
+      "bytes": 1351809,
+      "sha256": "baf119c66f85e6bcf97ffb6db59090c59edc17f24e30f6098143c666691d1f0e",
       "records": 4
     },
     {
@@ -641,8 +641,8 @@
       "source": "uploads/dictionnaires/interlinear/at/24-Jer.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 1720260,
-      "sha256": "5decd4c38bd61f8ec6a10aaf7d75f49fdd3eaea113ce475b4d7fc522d5cf9b14",
+      "bytes": 1720274,
+      "sha256": "2f60ca0da7aab59d33de035fca1fa34f1deeca146cefc37fb583a3830029d673",
       "records": 4
     },
     {
@@ -650,8 +650,8 @@
       "source": "uploads/dictionnaires/interlinear/at/25-Lam.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 124609,
-      "sha256": "339602cbaec2e4b69d4926b83d69b63eecbeac6168b7bb566880810969f44a26",
+      "bytes": 124612,
+      "sha256": "b0fb0c4ad0307def0da25456ffb8b31eb390d0ef2203cd56ec13c78ddf8a7db2",
       "records": 4
     },
     {
@@ -677,8 +677,8 @@
       "source": "uploads/dictionnaires/interlinear/at/28-Hos.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 188731,
-      "sha256": "1e53757916d72325912086f603dfe377764b0a0debdbfa1d714638e92263fd89",
+      "bytes": 188735,
+      "sha256": "147fea7d61e3c0492f9243ca235d8296e35d7ca150dd60f34a4192ebc837af00",
       "records": 4
     },
     {
@@ -713,8 +713,8 @@
       "source": "uploads/dictionnaires/interlinear/at/32-Jonah.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 54171,
-      "sha256": "e662cb0d68997a66471e50aa51a69c0d1c03d73f3249c9fa8c3d1ae113dc3483",
+      "bytes": 54176,
+      "sha256": "6715f45f4f5e0dae155ac8803e6af073cbd2cb3442c1faf51f57e3776e92e2bd",
       "records": 4
     },
     {
@@ -722,8 +722,8 @@
       "source": "uploads/dictionnaires/interlinear/at/33-Mic.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 111794,
-      "sha256": "c15be23723c18c437363435468698782061ee84430d66e4a80641350ea40aa9d",
+      "bytes": 111799,
+      "sha256": "de21bc6c85f5e6b1e89499653ec8d2ecd99c0de1158f6a5d78d5a0c257b7d0be",
       "records": 4
     },
     {
@@ -740,8 +740,8 @@
       "source": "uploads/dictionnaires/interlinear/at/35-Hab.json",
       "kind": "json",
       "group": "interlinear",
-      "bytes": 53295,
-      "sha256": "01ca0deaaed2f4bf208cd62bdf94b87c69173c40d00163f5d5266dddcb6ce2e8",
+      "bytes": 53300,
+      "sha256": "1a2d97fb5a1bad3e569c487091bc0ce2fd7470fc783c4cd49022054ae35b45e7",
       "records": 4
     },
     {
@@ -783,7 +783,7 @@
   ],
   "stats": {
     "files": 86,
-    "bytes": 145194748,
+    "bytes": 145196842,
     "by_group": {
       "dictionary-index": {
         "files": 7,
@@ -812,7 +812,7 @@
       },
       "interlinear": {
         "files": 40,
-        "bytes": 57945059,
+        "bytes": 57947153,
         "records": 306941
       }
     }
