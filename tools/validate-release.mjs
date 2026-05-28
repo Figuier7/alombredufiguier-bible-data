@@ -264,6 +264,24 @@ const gen156H539 = interlinear.refs.find((row) => {
 if (!gen156H539 || gen156H539[gIndex] !== 'faire confiance') {
   fail('Interlinear canary failed: Gen.15.6 H539 must display `faire confiance`.');
 }
+for (const expected of [
+  { osis: 'Gen', c: 2, v: 19, i: 13, strong: 'H935', gloss: 'faire venir' },
+  { osis: 'Gen', c: 1, v: 12, i: 1, strong: 'H3318', gloss: 'faire sortir' },
+  { osis: 'Gen', c: 3, v: 16, i: 5, strong: 'H7235', gloss: 'multiplier' },
+  { osis: 'Gen', c: 5, v: 29, i: 7, strong: 'H5162', gloss: 'consoler' },
+  { osis: 'Exod', c: 2, v: 19, i: 4, strong: 'H5337', gloss: 'd\u00e9livrer' },
+  { osis: 'Exod', c: 8, v: 5, i: 11, strong: 'H3772', gloss: 'retrancher' },
+  { osis: 'Lev', c: 13, v: 6, i: 14, strong: 'H2891', gloss: 'purifier' },
+  { osis: '1Chr', c: 15, v: 21, i: 11, strong: 'H5329', gloss: 'diriger' },
+]) {
+  const row = interlinear.refs.find((candidate) => {
+    const book = interlinear.books[candidate[bIndex]];
+    return book && book.osis === expected.osis && candidate[cIndex] === expected.c && candidate[vIndex] === expected.v && candidate[iIndex] === expected.i && candidate[strongIndex] === expected.strong;
+  });
+  if (!row || row[gIndex] !== expected.gloss) {
+    fail(`Interlinear stem canary failed: ${expected.osis}.${expected.c}.${expected.v}:${expected.i} ${expected.strong} must display \`${expected.gloss}\`.`);
+  }
+}
 const h7363Entries = hebrew.filter((entry) => ['H7363', 'H7363A', 'H7363B'].includes(entry.s));
 if (h7363Entries.length !== 3 || h7363Entries.some((entry) => entry.lg !== 'H7363')) fail('Hebrew lexeme group canary failed: H7363 variants');
 const h7363Glosses = interlinear.refs
