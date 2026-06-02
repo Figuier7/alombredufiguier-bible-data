@@ -58,15 +58,21 @@ node examples/javascript/interlinear-search.mjs Mitsrayim
 
 Attribution courte recommandee :
 
-> Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.
+> Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY-NC-SA 4.0.
 
 Voir `NOTICE.md` et `THIRD_PARTY_NOTICES.md` pour le detail des droits, sources et attributions.
 
 ## Licence
 
-Sauf mention contraire dans `THIRD_PARTY_NOTICES.md`, les traductions francaises, enrichissements, gloses, mappings et index produits par A l'ombre du figuier sont publies sous licence Creative Commons Attribution 4.0 International (CC BY 4.0).
+Sauf mention contraire dans `THIRD_PARTY_NOTICES.md`, les donnees originales, traductions francaises, enrichissements, gloses, annotations, mappings, index, structurations et travaux de compilation produits par A l'ombre du figuier sont publies sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Memes Conditions 4.0 International (CC BY-NC-SA 4.0).
 
-Licence officielle : https://creativecommons.org/licenses/by/4.0/
+Vous pouvez copier, partager, adapter, transformer et redistribuer ces elements uniquement dans un cadre non commercial, a condition de citer clairement la source et de republier toute adaptation sous la meme licence.
+
+Toute utilisation commerciale, directe ou indirecte, est interdite sans autorisation ecrite prealable du titulaire des droits.
+
+Licence officielle : https://creativecommons.org/licenses/by-nc-sa/4.0/
+
+Certains textes sources, donnees externes ou ressources tierces peuvent relever d'autres statuts juridiques, notamment le domaine public ou des licences tierces. La presente licence s'applique uniquement aux elements sur lesquels le projet detient des droits : selection, arrangement, structuration, traduction, enrichissement, annotation, indexation, mappings et compilation.
 
 Ce depot ne concede aucun droit sur les marques, logos, noms de projet, habillages graphiques ou ressources externes non incluses.
 
