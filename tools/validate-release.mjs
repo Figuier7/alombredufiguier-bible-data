@@ -94,6 +94,7 @@ const reviewedDefinitionPatterns = [
   /British and American/gi,
   /The Lord's Prayer/gi,
   /They That Fear the Lord/gi,
+  /HOLY SPIRIT/gi,
   /Heb\./gi,
   /Gr\./gi,
   /LXX/gi
@@ -212,12 +213,44 @@ const unexpectedRawTeacher = publicIsbeEntries.filter((entry) => {
 if (unexpectedRawTeacher.length) {
   fail('ISBE teacher/maître canary failed: unexpected raw teacher in ' + unexpectedRawTeacher.slice(0, 10).map((entry) => entry.id).join(', '));
 }
+for (const [id, expected] of Object.entries({
+  'isbe-001480': ['souffle de YHWH', 'longue sonnerie'],
+  'isbe-001481': ['vent brûlant', 'dessèchement', 'mildiou'],
+  'isbe-003585': ['rendre le dernier souffle', 'Saint-Esprit'],
+  'isbe-003814': ['le dessèchement, le mildiou et la grêle'],
+  'isbe-005794': ['shiddaphon, « dessèchement »'],
+  'isbe-001872': ['Blastus, le chambellan du roi', 'intendants'],
+  'isbe-008034': ['intendant']
+})) {
+  const definition = String(isbeById.get(id)?.definition || '').toLocaleLowerCase('fr');
+  for (const phrase of expected) {
+    if (!definition.includes(phrase.toLocaleLowerCase('fr'))) {
+      fail(`ISBE blast/ghost canary failed: ${id} must contain ${phrase}.`);
+    }
+  }
+}
+const forbiddenBlastGhostResidueRe = /\b(blast|blasting|blastings|ghost|steward|stewards)\b/i;
+const unexpectedBlastGhostResidues = publicIsbeEntries.filter((entry) => {
+  return forbiddenBlastGhostResidueRe.test(String(entry.definition || ''));
+});
+if (unexpectedBlastGhostResidues.length) {
+  fail('ISBE blast/ghost canary failed: unexpected raw residue in ' + unexpectedBlastGhostResidues.slice(0, 10).map((entry) => entry.id).join(', '));
+}
 
 const concepts = readJson('data/dictionaries/concepts.json');
 const conceptIds = new Set(concepts.map((concept) => concept.concept_id));
 const conceptLinks = readJson('data/dictionaries/concept-entry-links.json');
 const orphanLinks = conceptLinks.filter((link) => !conceptIds.has(link.concept_id));
 if (orphanLinks.length) fail('Orphan concept links: ' + orphanLinks.slice(0, 10).map((link) => `${link.entry_id}->${link.concept_id}`).join('; '));
+if (conceptSlugs.blast !== 'souffle' || slugMap.blast !== 'blast' || slugMap.souffle !== 'blast') {
+  fail('ISBE blast/ghost canary failed: blast/souffle slugs are not reversible.');
+}
+if (conceptSlugs['vent-brulant-dessechement'] !== 'vent-brulant-dessechement' || slugMap['vent-brulant-dessechement'] !== 'vent-brulant-dessechement') {
+  fail('ISBE blast/ghost canary failed: vent-brulant-dessechement slug is not reversible.');
+}
+if (conceptSlugs.steward !== 'intendant' || slugMap.steward !== 'steward' || slugMap.intendant !== 'steward') {
+  fail('ISBE blast/ghost canary failed: steward/intendant slugs are not reversible.');
+}
 
 const mixedConceptLabels = [];
 concepts.forEach((concept, index) => {
