@@ -166,9 +166,11 @@ for (const [slug, conceptId] of Object.entries({
 const emptyReadyDefinitions = [];
 const mixedVisibleLabels = [];
 const unreviewedDefinitionResidues = [];
+const publicIsbeEntries = [];
 for (const item of manifest.files.filter((entry) => entry.group === 'dictionary-corpus')) {
   const parsed = parsedByPath.get(item.path);
   if (!Array.isArray(parsed)) continue;
+  if (item.path.startsWith('data/dictionaries/isbe/isbe-')) publicIsbeEntries.push(...parsed);
   parsed.forEach((entry, index) => {
     if (entry?.status === 'ready' && hasNoText(entry.definition)) {
       emptyReadyDefinitions.push(`${item.path}[${index}] ${entry.id || ''} ${entry.mot || entry.label_fr || ''}`.trim());
@@ -184,6 +186,32 @@ for (const item of manifest.files.filter((entry) => entry.group === 'dictionary-
 if (emptyReadyDefinitions.length) fail('Ready dictionary entries with empty definition: ' + emptyReadyDefinitions.slice(0, 10).join('; '));
 if (mixedVisibleLabels.length) fail('Mixed-language visible dictionary labels: ' + mixedVisibleLabels.slice(0, 10).join('; '));
 if (unreviewedDefinitionResidues.length) fail('Unreviewed strong definition residues: ' + unreviewedDefinitionResidues.slice(0, 10).join('; '));
+
+if (publicIsbeEntries.length !== 9034) fail(`ISBE canary failed: expected 9034 entries, got ${publicIsbeEntries.length}.`);
+const isbeById = new Map(publicIsbeEntries.map((entry) => [entry.id, entry]));
+for (const [id, expected] of Object.entries({
+  'isbe-000374': 'enseignants hérétiques',
+  'isbe-000592': 'enseignants chrétiens',
+  'isbe-001460': '4. Enseignants :',
+  'isbe-002022': '"enseignant"',
+  'isbe-008437': "l'enseignant de Jérôme"
+})) {
+  const definition = String(isbeById.get(id)?.definition || '');
+  if (!definition.includes(expected)) fail(`ISBE teacher/maître canary failed: ${id} must contain ${expected}.`);
+}
+const allowedRawTeacherIds = new Set([
+  'isbe-000453',
+  'isbe-001418',
+  'isbe-001827',
+  'isbe-002772',
+  'isbe-003743'
+]);
+const unexpectedRawTeacher = publicIsbeEntries.filter((entry) => {
+  return !allowedRawTeacherIds.has(entry.id) && /\bteachers?\b/i.test(String(entry.definition || ''));
+});
+if (unexpectedRawTeacher.length) {
+  fail('ISBE teacher/maître canary failed: unexpected raw teacher in ' + unexpectedRawTeacher.slice(0, 10).map((entry) => entry.id).join(', '));
+}
 
 const concepts = readJson('data/dictionaries/concepts.json');
 const conceptIds = new Set(concepts.map((concept) => concept.concept_id));
