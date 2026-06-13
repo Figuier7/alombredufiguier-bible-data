@@ -1,7 +1,7 @@
 {
   "name": "alombredufiguier-bible-data",
-  "version": "2026.06.12",
-  "generated_at": "2026-06-12T13:10:13.358Z",
+  "version": "2026.06.12.1",
+  "generated_at": "2026-06-13T19:54:20.917Z",
   "source_root_hint": "dictionnaire-biblique-v2",
   "license": "CC BY 4.0",
   "attribution": "Donnees bibliques francaises fournies par A l'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.",
@@ -65,8 +65,8 @@
       "source": "uploads/dictionnaires/browse-index.json",
       "kind": "json",
       "group": "dictionary-index",
-      "bytes": 3751304,
-      "sha256": "4197a02d0ad8d98243e8d3aa79248593ee8487d77470b03d770b47dec2c70751",
+      "bytes": 3743654,
+      "sha256": "6dc4251fbbcb2acbd77c54b2a0216e7cfabd36292008caa722161ee10e757cca",
       "records": 4
     },
     {
@@ -75,7 +75,7 @@
       "kind": "json",
       "group": "search",
       "bytes": 15298987,
-      "sha256": "01de0aecb9962cf0fe7e3d3b2d90f10fd65dd048aa13f772f61454835ec033e3",
+      "sha256": "490a735f6efa0b0bbf9129699940ad4a0cff95120ec6ad947e4684c4a4a27da4",
       "records": 9840
     },
     {
@@ -101,8 +101,8 @@
       "source": "uploads/dictionnaires/easton/easton.entries.json",
       "kind": "json",
       "group": "dictionary-corpus",
-      "bytes": 4587585,
-      "sha256": "cb06a634715128a3262fce8b1051db5667d89036c82c7b6d797f32a187fe4f71",
+      "bytes": 4591346,
+      "sha256": "882f645bd7a48362f3d7784718d56cc813f511cedb9d76187af3772262899666",
       "records": 3963
     },
     {
@@ -783,11 +783,11 @@
   ],
   "stats": {
     "files": 86,
-    "bytes": 150308405,
+    "bytes": 150304516,
     "by_group": {
       "dictionary-index": {
         "files": 7,
-        "bytes": 17007525,
+        "bytes": 16999875,
         "records": 60490
       },
       "search": {
@@ -797,7 +797,7 @@
       },
       "dictionary-corpus": {
         "files": 29,
-        "bytes": 31153112,
+        "bytes": 31156873,
         "records": 18072
       },
       "hebrew": {
