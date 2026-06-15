@@ -97,6 +97,7 @@ const reviewedDefinitionPatterns = [
   /British and American/gi,
   /The Lord's Prayer/gi,
   /They That Fear the Lord/gi,
+  /The Book of Job in the Revised Version/gi,
   /HOLY SPIRIT/gi,
   /Heb\./gi,
   /Gr\./gi,
