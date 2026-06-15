@@ -4,23 +4,25 @@ Ce depot regroupe des traductions, enrichissements et index francais produits pa
 
 ## Dictionnaires bibliques
 
-- Easton : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY 4.0.
-- Smith : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY 4.0.
-- ISBE : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY 4.0.
-- BYM : droits confirmes par A l'ombre du figuier pour ce perimetre ; lexique BYM et enrichissements publies sous CC BY 4.0 avec attribution A l'ombre du figuier.
+- Easton : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY-NC-SA 4.0.
+- Smith : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY-NC-SA 4.0.
+- ISBE : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY-NC-SA 4.0.
+- BYM : droits confirmes par A l'ombre du figuier pour ce perimetre ; lexique BYM et enrichissements publies sous CC BY-NC-SA 4.0 avec attribution A l'ombre du figuier.
 
 ## Hebreu, Strong, BDB et OSHB
 
 - Les donnees de lemme, morphologie et alignements hebreux proviennent notamment du projet Open Scriptures Hebrew Bible / OSHB selon les fichiers sources utilises dans le pipeline.
 - Conserver l'attribution au Open Scriptures Hebrew Bible Project lorsque vous republiez des donnees derivees.
 - Les ressources historiques Strong, BDB et WLC sont documentees selon leur statut public domain ou leur licence upstream lorsque applicable.
-- Les traductions francaises, corrections editoriales, gloses, mappings Strong/concepts et index generes par A l'ombre du figuier sont publies sous CC BY 4.0.
+- Les traductions francaises, corrections editoriales, gloses, mappings Strong/concepts et index generes par A l'ombre du figuier sont publies sous CC BY-NC-SA 4.0.
 
 ## Strong grec
 
 - Le lexique Strong grec publie dans `data/greek/greek-strong-lexicon-fr.json` est derive du dictionnaire grec de Strong's Exhaustive Concordance, James Strong, 1890, domaine public.
-- Le fichier public ne republie pas les definitions anglaises source ; il contient uniquement les entrees grecques relues avec gloses et definitions francaises produites par A l'ombre du figuier sous CC BY 4.0.
-- Les fichiers derives CATSS/LXX et les mappings hebreu-grec restent exclus de ce depot public CC BY 4.0.
+- Le fichier public ne republie pas les definitions anglaises source ; il contient uniquement les entrees grecques relues avec gloses et definitions francaises produites par A l'ombre du figuier sous CC BY-NC-SA 4.0.
+- Les fichiers derives CATSS/LXX et les mappings hebreu-grec restent exclus de ce depot public CC BY-NC-SA 4.0.
+
+Sauf mention contraire, les traductions francaises, adaptations, enrichissements, annotations, index, mappings, structurations et compilations produits par A l'ombre du figuier sont publies sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Memes Conditions 4.0 International (CC BY-NC-SA 4.0). Les oeuvres sources appartenant au domaine public conservent leur statut propre.
 
 ## Limites
 

@@ -8,6 +8,8 @@ const sourceRoot = path.resolve(process.argv[2] || process.env.SOURCE_ROOT || pa
 const dataRoot = path.join(repoRoot, 'data');
 const version = process.env.RELEASE_VERSION || new Date().toISOString().slice(0, 10).replaceAll('-', '.');
 const generatedAt = new Date().toISOString();
+const projectLicense = 'CC BY-NC-SA 4.0';
+const projectLicenseUrl = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
 
 const baseSpecs = [
   ['uploads/dictionnaires/concepts.json', 'data/dictionaries/concepts.json', 'json', 'dictionary-index'],
@@ -112,8 +114,9 @@ const manifest = {
   version,
   generated_at: generatedAt,
   source_root_hint: path.basename(sourceRoot),
-  license: 'CC BY 4.0',
-  attribution: 'Donnees bibliques francaises fournies par A l\'ombre du figuier - https://alombredufiguier.org - licence CC BY 4.0.',
+  license: projectLicense,
+  license_url: projectLicenseUrl,
+  attribution: 'Donnees bibliques francaises fournies par A l\'ombre du figuier - https://alombredufiguier.org - licence CC BY-NC-SA 4.0.',
   files,
   stats
 };

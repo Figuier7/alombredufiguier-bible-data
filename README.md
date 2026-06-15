@@ -64,7 +64,7 @@ Voir `NOTICE.md` et `THIRD_PARTY_NOTICES.md` pour le detail des droits, sources 
 
 ## Licence
 
-Sauf mention contraire dans `THIRD_PARTY_NOTICES.md`, les donnees originales, traductions francaises, enrichissements, gloses, annotations, mappings, index, structurations et travaux de compilation produits par A l'ombre du figuier sont publies sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Memes Conditions 4.0 International (CC BY-NC-SA 4.0).
+Sauf mention contraire, les traductions francaises, adaptations, enrichissements, annotations, index, mappings, structurations et compilations produits par A l'ombre du figuier sont publies sous licence Creative Commons Attribution - Pas d'Utilisation Commerciale - Partage dans les Memes Conditions 4.0 International (CC BY-NC-SA 4.0). Les oeuvres sources appartenant au domaine public conservent leur statut propre.
 
 Vous pouvez copier, partager, adapter, transformer et redistribuer ces elements uniquement dans un cadre non commercial, a condition de citer clairement la source et de republier toute adaptation sous la meme licence.
 

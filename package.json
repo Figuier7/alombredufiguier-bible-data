@@ -9,5 +9,5 @@
     "validate": "node tools/validate-release.mjs",
     "build:from-local": "node tools/build-public-package.mjs ../dictionnaire-biblique-v2"
   },
-  "license": "CC-BY-4.0"
+  "license": "CC-BY-NC-SA-4.0"
 }

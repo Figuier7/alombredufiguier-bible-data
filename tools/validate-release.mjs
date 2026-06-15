@@ -5,6 +5,9 @@ import crypto from 'node:crypto';
 
 const repoRoot = path.resolve(new URL('..', import.meta.url).pathname.replace(/^\/(.:\/)/, '$1'));
 const maxBytes = 95 * 1024 * 1024;
+const expectedProjectLicense = 'CC BY-NC-SA 4.0';
+const expectedProjectLicenseUrl = 'https://creativecommons.org/licenses/by-nc-sa/4.0/';
+const expectedPackageLicense = 'CC-BY-NC-SA-4.0';
 const bannedPatterns = [
   /(^|\/)\.claude(\/|$)/,
   /(^|\/)\.cowork-ssh(\/|$)/,
@@ -107,6 +110,40 @@ const manifestPath = path.join(repoRoot, 'data/manifest.json');
 if (!fs.existsSync(manifestPath)) fail('Missing data/manifest.json. Run tools/build-public-package.mjs first.');
 const manifest = readJson('data/manifest.json');
 if (!Array.isArray(manifest.files) || manifest.files.length === 0) fail('Manifest has no files.');
+if (manifest.license !== expectedProjectLicense) {
+  fail(`Manifest license mismatch: expected ${expectedProjectLicense}, got ${manifest.license}.`);
+}
+if (manifest.license_url !== expectedProjectLicenseUrl) {
+  fail(`Manifest license_url mismatch: expected ${expectedProjectLicenseUrl}, got ${manifest.license_url}.`);
+}
+if (!String(manifest.attribution || '').includes(expectedProjectLicense)) {
+  fail(`Manifest attribution must mention ${expectedProjectLicense}.`);
+}
+if (/\bCC BY 4\.0\b/.test(String(manifest.attribution || ''))) {
+  fail('Manifest attribution still contains the obsolete project license CC BY 4.0.');
+}
+
+const packageMetadata = readJson('package.json');
+if (packageMetadata.license !== expectedPackageLicense) {
+  fail(`package.json license mismatch: expected ${expectedPackageLicense}, got ${packageMetadata.license}.`);
+}
+
+const licenseText = readUtf8(path.join(repoRoot, 'LICENSE'));
+if (!licenseText.includes('Attribution-NonCommercial-ShareAlike 4.0 International')) {
+  fail('LICENSE is not the official CC BY-NC-SA 4.0 legal code.');
+}
+for (const rel of ['README.md', 'NOTICE.md', 'THIRD_PARTY_NOTICES.md', 'tools/build-public-package.mjs']) {
+  const text = readUtf8(path.join(repoRoot, rel));
+  const staleProjectPatterns = [
+    /A l'ombre du figuier[^.\n]*\bCC BY 4\.0\b/i,
+    /\blicence CC BY 4\.0\b/i,
+    /\bsous CC BY 4\.0\b/i,
+    /\b(?:repo|depot|paquet|runtime) public[^.\n]*\bCC BY 4\.0\b/i
+  ];
+  if (staleProjectPatterns.some((pattern) => pattern.test(text))) {
+    fail(`Obsolete project-owned CC BY 4.0 mention found in ${rel}.`);
+  }
+}
 const expectedFileCount = 86;
 if (manifest.files.length !== expectedFileCount) fail(`Manifest file count mismatch: expected ${expectedFileCount}, got ${manifest.files.length}.`);
 
@@ -406,6 +443,9 @@ greekStrong.forEach((entry, index) => {
   const source = entry.source || {};
   if (source.license !== 'Public Domain' || source.year !== 1890) {
     fail(`Greek Strong entry ${entry.strong} has invalid source metadata.`);
+  }
+  if (source.translation !== 'A l\'ombre du figuier, CC BY-NC-SA 4.0, curation BYM') {
+    fail(`Greek Strong entry ${entry.strong} has invalid project translation license metadata.`);
   }
 });
 
