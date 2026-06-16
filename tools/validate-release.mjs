@@ -187,6 +187,19 @@ const slugMap = readJson('data/dictionaries/slug-map.json');
 const conceptSlugs = readJson('data/dictionaries/concept-url-slugs.json');
 if (slugMap.blanchiment !== 'whitewash' || conceptSlugs.whitewash !== 'blanchiment') fail('Canary failed: whitewash/blanchiment');
 if (slugMap['versions-coptes'] !== 'coptic-versions' || conceptSlugs['coptic-versions'] !== 'versions-coptes') fail('Canary failed: versions-coptes');
+if (conceptSlugs.fasts !== 'jeunes' || slugMap.jeunes !== 'fasts' || slugMap.fasts !== 'fasts') {
+  fail('Canary failed: fasts/jeunes');
+}
+if (conceptSlugs.farewell !== 'adieu' || slugMap.adieu !== 'farewell' || slugMap.farewell !== 'farewell') {
+  fail('Canary failed: farewell/adieu');
+}
+if (
+  conceptSlugs['ill-ill-favored'] !== 'mauvais-de-mauvaise-apparence' ||
+  slugMap['mauvais-de-mauvaise-apparence'] !== 'ill-ill-favored' ||
+  slugMap['ill-ill-favored'] !== 'ill-ill-favored'
+) {
+  fail('Canary failed: ill-ill-favored/mauvais-de-mauvaise-apparence');
+}
 for (const [conceptId, slug] of Object.entries(conceptSlugs)) {
   if (slugMap[slug] !== conceptId) fail(`Canonical slug is not reversible: ${conceptId} -> ${slug} -> ${slugMap[slug]}`);
 }
@@ -228,6 +241,21 @@ if (unreviewedDefinitionResidues.length) fail('Unreviewed strong definition resi
 
 if (publicIsbeEntries.length !== 9034) fail(`ISBE canary failed: expected 9034 entries, got ${publicIsbeEntries.length}.`);
 const isbeById = new Map(publicIsbeEntries.map((entry) => [entry.id, entry]));
+const smithEntries = readJson('data/dictionaries/smith/smith.entries.json');
+const smithById = new Map(smithEntries.map((entry) => [entry.id, entry]));
+const publicVisibleLabelCanaries = [
+  [smithById, 'smith-001480', 'Jeûnes', 'Fasts', 'smith-jeunes', null],
+  [isbeById, 'isbe-003195', 'Adieu', 'Farewell', 'adieu', null],
+  [isbeById, 'isbe-004355', 'Mauvais ; de mauvaise apparence', 'Ill; Ill-Favored', 'mauvais-de-mauvaise-apparence', 'Voir Défaut rituel.']
+];
+for (const [byId, id, label, sourceTitle, slug, definition] of publicVisibleLabelCanaries) {
+  const entry = byId.get(id);
+  if (!entry) fail(`Public visible label canary failed: missing ${id}`);
+  if (entry.label_fr !== label) fail(`Public visible label canary failed: ${id} label_fr=${entry.label_fr}, expected ${label}`);
+  if (entry.source_title_en !== sourceTitle || entry.mot !== sourceTitle) fail(`Public visible label canary failed: ${id} source fields changed.`);
+  if (entry.slug !== slug) fail(`Public visible label canary failed: ${id} slug=${entry.slug}, expected ${slug}`);
+  if (definition && entry.definition !== definition) fail(`Public visible label canary failed: ${id} definition override missing.`);
+}
 for (const [id, expected] of Object.entries({
   'isbe-000374': 'enseignants hérétiques',
   'isbe-000592': 'enseignants chrétiens',
