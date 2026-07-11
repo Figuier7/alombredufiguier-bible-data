@@ -7,6 +7,7 @@ Ce depot regroupe des traductions, enrichissements et index francais produits pa
 - Easton : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY-NC-SA 4.0.
 - Smith : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY-NC-SA 4.0.
 - ISBE : original anglais dans le domaine public ; traduction francaise et enrichissements par A l'ombre du figuier sous CC BY-NC-SA 4.0.
+- Watson : *A Biblical and Theological Dictionary* de Richard Watson (1781-1833), edition historique dans le domaine public ; traduction francaise, curation, structuration et enrichissements par A l'ombre du figuier sous CC BY-NC-SA 4.0. Reference documentaire de l'edition numerisee consultee : [Project Gutenberg eBook 53884](https://www.gutenberg.org/ebooks/53884). Project Gutenberg n'est ni editeur, ni sponsor, ni marque associee a cette version francaise modifiee.
 - BYM : droits confirmes par A l'ombre du figuier pour ce perimetre ; lexique BYM et enrichissements publies sous CC BY-NC-SA 4.0 avec attribution A l'ombre du figuier.
 
 ## Hebreu, Strong, BDB et OSHB

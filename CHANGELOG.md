@@ -8,3 +8,4 @@ Le format suit une logique simple par version datee `vYYYY.MM.DD`.
 
 - Initialisation du repo public de donnees bibliques francaises.
 - Ajout du builder reproductible, du manifest, des schemas, des exemples et du validateur de release.
+- Ajout du dictionnaire Watson complet : 1 555 notices francaises, liens conceptuels, index et notices de droits.

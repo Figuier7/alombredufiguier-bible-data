@@ -24,6 +24,7 @@ const baseSpecs = [
   ['uploads/dictionnaires/bym/bym-lexicon.entries.json', 'data/dictionaries/bym/bym-lexicon.entries.json', 'json', 'dictionary-corpus'],
   ['uploads/dictionnaires/easton/easton.entries.json', 'data/dictionaries/easton/easton.entries.json', 'json', 'dictionary-corpus'],
   ['uploads/dictionnaires/smith/smith.entries.json', 'data/dictionaries/smith/smith.entries.json', 'json', 'dictionary-corpus'],
+  ['uploads/dictionnaires/watson/watson.entries.json', 'data/dictionaries/watson/watson.entries.json', 'json', 'dictionary-corpus'],
   ['uploads/dictionnaires/hebrew/hebrew-lexicon-fr-compact.json', 'data/hebrew/hebrew-lexicon-fr-compact.json', 'json', 'hebrew'],
   ['uploads/dictionnaires/strong-to-concepts-index.json', 'data/hebrew/strong-to-concepts-index.json', 'json', 'hebrew'],
   ['uploads/dictionnaires/strong-concordance-oshb.json', 'data/hebrew/strong-concordance-oshb.json', 'json', 'hebrew'],

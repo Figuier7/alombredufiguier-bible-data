@@ -96,6 +96,8 @@ const reviewedDefinitionPatterns = [
   /American Standard King James Version Revisee/gi,
   /British and American/gi,
   /The Lord's Prayer/gi,
+  /A plain Account of the Nature and Ends of the Sacrament of the Lord[’']s Supper/gi,
+  /An Attempt to ascertain the Authority, Nature, and Design of the Lord[’']s Supper/gi,
   /They That Fear the Lord/gi,
   /The Book of Job in the Revised Version/gi,
   /HOLY SPIRIT/gi,
@@ -145,7 +147,7 @@ for (const rel of ['README.md', 'NOTICE.md', 'THIRD_PARTY_NOTICES.md', 'tools/bu
     fail(`Obsolete project-owned CC BY 4.0 mention found in ${rel}.`);
   }
 }
-const expectedFileCount = 86;
+const expectedFileCount = 87;
 if (manifest.files.length !== expectedFileCount) fail(`Manifest file count mismatch: expected ${expectedFileCount}, got ${manifest.files.length}.`);
 
 const repoFiles = walk(repoRoot);
@@ -366,6 +368,29 @@ for (const [mot, target] of Object.entries({
   }
 }
 if (!bymEntries.some((entry) => String(entry.mot || '').startsWith('ALLÉLOU-YAH'))) fail('BYM canary failed: missing ALLÉLOU-YAH.');
+const watsonPath = 'data/dictionaries/watson/watson.entries.json';
+const watsonManifest = manifest.files.find((item) => item.path === watsonPath);
+if (!watsonManifest) fail('Missing Watson dictionary in public manifest.');
+if (watsonManifest.group !== 'dictionary-corpus') fail('Watson dictionary must use manifest group `dictionary-corpus`.');
+const watsonEntries = parsedByPath.get(watsonPath);
+if (!Array.isArray(watsonEntries) || watsonEntries.length !== 1555) fail('Watson canary failed: expected 1555 entries.');
+watsonEntries.forEach((entry, index) => {
+  const expectedId = `watson-${String(index + 1).padStart(6, '0')}`;
+  if (entry.id !== expectedId) fail(`Watson canary failed: entry ${index} id=${entry.id}, expected ${expectedId}.`);
+  if (entry.dictionary !== 'watson' || entry.source_order !== index + 1 || entry.status !== 'ready') {
+    fail(`Watson canary failed: invalid runtime contract for ${expectedId}.`);
+  }
+  if (hasNoText(entry.mot) || hasNoText(entry.label_fr) || hasNoText(entry.definition)) {
+    fail(`Watson canary failed: empty visible field for ${expectedId}.`);
+  }
+});
+const watsonSerialized = JSON.stringify(watsonEntries);
+if (/Project Gutenberg|Gutenberg-tm|FULL PROJECT GUTENBERG LICENSE/i.test(watsonSerialized)) {
+  fail('Watson canary failed: Project Gutenberg trademark/license text is associated with the transformed runtime.');
+}
+const watsonLinks = conceptLinks.filter((link) => /^watson-\d{6}$/.test(String(link.entry_id || '')));
+if (watsonLinks.length !== 1555) fail(`Watson canary failed: expected 1555 concept links, got ${watsonLinks.length}.`);
+
 const interlinear = readJson('data/interlinear/at-search-index.json');
 const strongIndex = interlinear.columns.indexOf('s');
 const saIndex = interlinear.columns.indexOf('sa');

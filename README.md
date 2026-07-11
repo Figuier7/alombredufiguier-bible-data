@@ -2,11 +2,11 @@
 
 Repo public de donnees bibliques francaises destine aux sites, apps et outils de recherche biblique.
 
-Ce depot contient des donnees runtime documentees et versionnees, sans dependance WordPress : dictionnaire biblique interactif, corpus BYM/Easton/Smith/ISBE, lexique hebreu/BDB, index Strong et Bible interlineaire AT.
+Ce depot contient des donnees runtime documentees et versionnees, sans dependance WordPress : dictionnaire biblique interactif, corpus BYM/Easton/Smith/ISBE/Watson, lexique hebreu/BDB, index Strong et Bible interlineaire AT.
 
 ## Donnees disponibles
 
-- `data/dictionaries/` : concepts, slugs, liens entre concepts et entrees, index browse/search, corpus BYM, Easton, Smith et ISBE.
+- `data/dictionaries/` : concepts, slugs, liens entre concepts et entrees, index browse/search, corpus BYM, Easton, Smith, ISBE et Watson.
 - `data/hebrew/` : lexique hebreu compact, concordance Strong, familles de racines et mappings Strong/concepts.
 - `data/greek/` : lexique Strong grec francais relu, derive du Strong original public domain.
 - `data/interlinear/` : livres interlineaires de l'Ancien Testament et index de recherche AT.
